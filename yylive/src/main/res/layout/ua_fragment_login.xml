@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_marginTop="20dip"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <View style="@style/UA.Divider.Solid.Horizontal" />
+
+        <LinearLayout
+            android:id="@+id/ua_login_ll_username"
+            style="@style/UA.EditText.Layout" >
+
+            <ImageView
+                style="@style/UA.EditText.DrawableLeft"
+                android:contentDescription="@string/ua_contentDescription"
+                android:src="@drawable/ua_ic_username" />
+
+            <com.yy.udbauth.ui.widget.UdbEditText
+                android:id="@+id/ua_login_et_username"
+                style="@style/UA.EditText.Theme"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/ua_login_username_hint"
+                android:maxLength="30"
+                android:singleLine="true" />
+
+            <ImageButton
+                android:id="@+id/ua_login_btn_clear_username"
+                style="@style/UA.EditText.DrawableRight"
+                android:contentDescription="@string/ua_contentDescription"
+                android:src="@drawable/ua_ic_delete" />
+
+            <ImageButton
+                android:id="@+id/ua_login_btn_show_accounts_list"
+                style="@style/UA.EditText.DrawableRight"
+                android:layout_marginLeft="5dp"
+                android:contentDescription="@string/ua_contentDescription"
+                android:src="@drawable/ua_ic_stretch" />
+        </LinearLayout>
+
+        <View style="@style/UA.Divider.Solid.Horizontal" />
+
+        <LinearLayout style="@style/UA.EditText.Layout" >
+
+            <ImageView
+                style="@style/UA.EditText.DrawableLeft"
+                android:contentDescription="@string/ua_contentDescription"
+                android:src="@drawable/ua_ic_lg_password" />
+
+            <com.yy.udbauth.ui.widget.UdbEditText
+                android:id="@+id/ua_login_et_password"
+                style="@style/UA.EditText.Theme"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/ua_login_password_hint"
+                android:inputType="textPassword"
+                android:maxLength="30"
+                android:singleLine="true" />
+
+            <ImageButton
+                android:id="@+id/ua_login_btn_clear_password"
+                style="@style/UA.EditText.DrawableRight"
+                android:contentDescription="@string/ua_contentDescription"
+                android:src="@drawable/ua_ic_delete" />
+
+            <CheckBox
+                android:id="@+id/ua_login_cb_show_password"
+                style="@style/UA.EditText.DrawableRight"
+                android:layout_marginLeft="5dp"
+                android:background="@null"
+                android:button="@drawable/ua_selector_checkbox_password_visable"
+                android:checked="false"
+                android:contentDescription="@string/ua_contentDescription" />
+        </LinearLayout>
+
+        <View style="@style/UA.Divider.Solid.Horizontal" />
+
+        <Button
+            android:id="@+id/ua_login_btn_login"
+            style="@style/UA.Button.Theme"
+            android:layout_width="fill_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="37dp"
+            android:text="@string/ua_login_btn_login" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp" >
+
+            <TextView
+                android:id="@+id/ua_login_btn_find_my_password"
+                style="@style/UA.TextView.Normal"
+                android:layout_alignParentLeft="true"
+                android:clickable="true"
+                android:text="@string/ua_login_btn_find_my_password" />
+
+            <TextView
+                android:id="@+id/ua_login_btn_sms_login"
+                style="@style/UA.TextView.Normal"
+                android:layout_alignParentRight="true"
+                android:background="@null"
+                android:clickable="true"
+                android:text="@string/ua_login_btn_sms_login" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/ua_login_btn_register"
+        style="@style/UA.TextView.Theme"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:background="@null"
+        android:text="@string/ua_login_btn_register"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>

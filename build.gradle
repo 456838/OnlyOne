@@ -1,0 +1,28 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.3.3'
+        //发布插件
+//        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.6'
+//        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
+//        classpath "com.taobao.android:atlasplugin:2.3.3.rc19"
+        classpath "com.taobao.android:atlasplugin:2.3.3.rc1"
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        maven { url 'http://repo.yypm.com:8181/nexus/content/groups/public' }
+        maven { url 'http://repo.yypm.com:8181/nexus/content/repositories/snapshots' }
+        maven { url "https://jitpack.io" }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

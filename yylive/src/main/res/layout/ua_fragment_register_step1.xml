@@ -1,0 +1,119 @@
+<!-- 手机短信注册，第一步 -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <TextView
+        style="@style/UA.TextView.Normal"
+        android:layout_height="58dip"
+        android:background="@null"
+        android:clickable="true"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dip"
+        android:paddingRight="15dip"
+        android:text="@string/ua_register_txt_input_mobile_phone" />
+
+    <View style="@style/UA.Divider.Solid.Horizontal" />
+
+    <LinearLayout
+        android:id="@+id/ua_register_country_layout"
+        style="@style/UA.EditText.Layout"
+        android:clickable="true" >
+
+        <TextView
+            style="@style/UA.EditText.Theme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ua_reg_mobile_country_hint" />
+
+        <TextView
+            android:id="@+id/ua_register_tv_country_name"
+            style="@style/UA.EditText.Theme"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:text="@string/ua_reg_mobile_country_name" />
+
+        <TextView
+            android:id="@+id/ua_register_tv_country_number"
+            style="@style/UA.EditText.Theme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="middle"
+            android:singleLine="true"
+            android:text="@string/ua_reg_mobile_country_number" />
+
+        <ImageButton
+            style="@style/UA.EditText.DrawableRight"
+            android:contentDescription="@string/ua_contentDescription"
+            android:src="@drawable/ua_ic_arrow_right" />
+    </LinearLayout>
+
+    <View style="@style/UA.Divider.Solid.Horizontal" />
+
+    <LinearLayout style="@style/UA.EditText.Layout" >
+
+        <ImageView
+            style="@style/UA.EditText.DrawableLeft"
+            android:contentDescription="@string/ua_contentDescription"
+            android:src="@drawable/ua_ic_reg_mobile" />
+
+        <com.yy.udbauth.ui.widget.UdbEditText
+            android:id="@+id/ua_register_et_mobile"
+            style="@style/UA.EditText.Theme"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/ua_reg_mobile_hint"
+            android:maxLength="30"
+            android:inputType="phone"
+            android:singleLine="true" />
+
+        <ImageButton
+            android:id="@+id/ua_register_btn_clear_mobile"
+            style="@style/UA.EditText.DrawableRight"
+            android:contentDescription="@string/ua_contentDescription"
+            android:src="@drawable/ua_ic_delete" />
+    </LinearLayout>
+
+    <View style="@style/UA.Divider.Solid.Horizontal" />
+
+    <Button
+        android:id="@+id/ua_register_btn_goto_step2"
+        style="@style/UA.Button.Theme"
+        android:layout_width="fill_parent"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="37dp"
+        android:text="@string/ua_reg_btn_next" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <CheckBox
+            android:id="@+id/ua_register_cb_agree"
+            style="@style/UA.TextView.Normal"
+            android:layout_width="wrap_content"
+            android:layout_height="50dip"
+            android:button="@null"
+            android:checked="false"
+            android:drawableLeft="@drawable/ua_selector_checkbox"
+            android:drawablePadding="5dp"
+            android:text="@string/ua_register_txt_agree" />
+
+        <TextView
+            android:id="@+id/ua_register_btn_see_license"
+            style="@style/UA.TextView.Theme"
+            android:background="@null"
+            android:clickable="true"
+            android:text="@string/ua_register_txt_user_agreement" />
+    </LinearLayout>
+
+</LinearLayout>

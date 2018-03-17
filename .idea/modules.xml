@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/OnlyOne.iml" filepath="$PROJECT_DIR$/OnlyOne.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bmob/bmob.iml" filepath="$PROJECT_DIR$/bmob/bmob.iml" />
+      <module fileurl="file://$PROJECT_DIR$/onlyonebase/onlyonebase.iml" filepath="$PROJECT_DIR$/onlyonebase/onlyonebase.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xmly/xmly.iml" filepath="$PROJECT_DIR$/xmly/xmly.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yylive/yylive.iml" filepath="$PROJECT_DIR$/yylive/yylive.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yyliveshow/yyliveshow.iml" filepath="$PROJECT_DIR$/yyliveshow/yyliveshow.iml" />
+    </modules>
+  </component>
+</project>

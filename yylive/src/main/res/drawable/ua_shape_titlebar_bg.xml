@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item>
+        <shape android:shape="rectangle" >
+            <solid android:color="@color/UA.TitleBar.Divider" />
+        </shape>
+    </item>
+    <item android:bottom="0.6dip">
+        <shape android:shape="rectangle" >
+            <solid android:color="@color/UA.TitleBar.Background" />
+        </shape>
+    </item>
+
+</layer-list>

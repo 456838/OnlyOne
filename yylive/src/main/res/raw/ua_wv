@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta content="telephone=no" name="format-detection" />
+<meta content="email=no" name="format-detection" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<style type="text/css">
+.center{
+	margin:0px auto;  
+	text-align:center; 
+}
+</style>
+<title>webverify</title>
+</head>
+<body>
+<div id="interActiveWrap" class="center"></div>
+
+<script>
+	%s
+	function interactive_captcha_ajax(opts){
+		/**
+		 * opts
+		 * {
+		 * 	type: "drag",
+		 * 	verifyToken: "xxxxx",
+		 * 	verifyOK: true
+		 * } 
+		 */
+		
+		window.WebBridge.onDrawVerifyResult(opts.verifyToken,opts.verifyOK);
+	}
+</script>
+</body>
+</html>

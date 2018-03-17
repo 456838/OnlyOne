@@ -1,0 +1,69 @@
+apply plugin: 'com.android.library'
+
+android {
+    useLibrary 'org.apache.http.legacy'
+    compileSdkVersion "${compile_sdk_version}" as Integer
+    buildToolsVersion "${build_tools_version}"
+    defaultConfig {
+        minSdkVersion "${min_sdk_version}" as Integer
+        targetSdkVersion "${target_sdk_version}" as Integer
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        ndk {
+            abiFilters "armeabi-v7a"
+        }
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [ moduleName : project.getName() ]
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    //    yysdk依赖
+    compile "com.yy.android.yylivesdk:yylivesdk:${yylivesdk_version}@aar"
+    compile "com.yy.android.yylivesdk:yymedia:${yylivesdk_version}@aar"
+    compile "com.yy.android.yylivesdk:signalsdk:${yylivesdk_version}@aar"
+    //    compile("com.duowan.android.yyantilib:androiditna:${itna_version}")
+    //    compile("com.duowan.android.yyantilib:androiditna:${itna_version}:armeabi-v7a@so")
+    //    compile("com.yy.android.yylivesdk:imSDK:${yylivesdk_version}@aar")
+    //udb相关依赖
+    compile "com.yy.android.udbauth:udbauth-sdk:${libver_udbauth_sdk_version}"
+//    compile("com.yy.android.udbloginui:ui-for-yyprotosdk:${libver_udbauth_ui_version}")
+//            {
+//                exclude group: "com.google.android", module: "android-support-v4"
+//                exclude group: "com.yy.android.udbauth", module: "udbauth-sdk"
+////                exclude group: "com.duowan.android.yyantilib", module: "androiditna"
+//                exclude group: "com.yy.android.yyprotosdk", module: "yyprotosdk"
+//            }
+    compile "com.umeng.social:weibosdkcore_v3.1.4:${weibosdkcore_version}"
+    compile "com.duowan.android.DeviceIdentifier:DeviceIdentifier:${libver_deviceid_version}"
+    compile "com.yy.android.hiidostatsdk:hiido_statis:${hiido_static_version}"
+    compile('com.j256.ormlite:ormlite-core:4.45') {
+        exclude group: 'com.android.support', module: 'appcompat-v7'
+    }
+    compile 'com.jaeger.statusbaruitl:library:1.3.5'
+    compile('com.j256.ormlite:ormlite-android:4.45') {
+        exclude group: 'com.android.support', module: 'appcompat-v7'
+    }
+    compile project(':onlyonebase')
+}

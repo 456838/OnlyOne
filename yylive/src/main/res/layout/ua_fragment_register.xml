@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ViewFlipper xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ua_register_viewflipper"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+
+    <include layout="@layout/ua_fragment_register_step1" />
+
+    <include layout="@layout/ua_fragment_register_step2" />
+
+    <include layout="@layout/ua_fragment_register_step3" />
+
+</ViewFlipper>

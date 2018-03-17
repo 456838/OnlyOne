@@ -1,0 +1,50 @@
+<resources>
+
+    <!-- 标题栏 -->
+    <dimen name="UA.TitleBar.Layout.Height">50dip</dimen>
+    
+    <dimen name="UA.TitleBar.Title.TextSize">21sp</dimen>
+    <dimen name="UA.TitleBar.Title.TextSize.Small">17sp</dimen>
+    <dimen name="UA.TitleBar.Title.Sub.TextSize">13sp</dimen>
+    
+    <dimen name="UA.TitleBar.Progress.Size">25dip</dimen>
+    
+    <dimen name="UA.TitleBar.ImageButton.Width">45dip</dimen>
+    <dimen name="UA.TitleBar.ImageButton.Height">50dip</dimen>
+    <dimen name="UA.TitleBar.ImageButton.Padding">8dip</dimen>
+    
+    <dimen name="UA.TitleBar.TextButton.TextSize">16sp</dimen>
+    <dimen name="UA.TitleBar.TextButton.MarginLeft">2.5dip</dimen>
+    <dimen name="UA.TitleBar.TextButton.MarginRight">5dip</dimen>
+    <dimen name="UA.TitleBar.TextButton.PaddingLeft">5dip</dimen>
+    <dimen name="UA.TitleBar.TextButton.PaddingRight">5dip</dimen>
+    <dimen name="UA.TitleBar.TextButton.PaddingTop">0dip</dimen>
+    <dimen name="UA.TitleBar.TextButton.PaddingBottom">0dip</dimen>
+
+    <!-- 按钮.扁平化 -->
+    <dimen name="UA.Button.Flat.Height">50dip</dimen>
+    <dimen name="UA.Button.Flat.PaddingLeft">10dip</dimen>
+    <dimen name="UA.Button.Flat.PaddingRight">10dip</dimen>
+    <dimen name="UA.Button.Flat.PaddingTop">5dip</dimen>
+    <dimen name="UA.Button.Flat.PaddingBottom">5dip</dimen>
+    <dimen name="UA.Button.Flat.MinWidth">70dip</dimen>
+    <dimen name="UA.Button.Flat.MinHeight">37dip</dimen>
+    <dimen name="UA.Button.Flat.TextSize">18sp</dimen>
+    <dimen name="UA.Button.Flat.Border">0.0dip</dimen>
+    <dimen name="UA.Button.Flat.Corners">8px</dimen>
+
+
+	<!--分割线 -->
+    <dimen name="UA.Divider.Solid.Horizontal.Height">1px</dimen>
+
+	<!--分割线 -->
+    <dimen name="UA.Dialog.Layout.minWidth">180dip</dimen>
+    <dimen name="UA.Dialog.Layout.padding">10dip</dimen>
+    <dimen name="UA.Dialog.Content.padding">13dip</dimen>
+    <dimen name="UA.Dialog.Content.TextSize">16sp</dimen>
+    <dimen name="UA.Dialog.Title.TextSize">17sp</dimen>
+    <dimen name="UA.Dialog.Title.Height">30sp</dimen>
+    <dimen name="UA.Dialog.Title.Padding.Horizontal">10dip</dimen>
+    <dimen name="UA.Dialog.Btn.Height">45dip</dimen>
+    <dimen name="UA.Dialog.Btn.TextSize">17sp</dimen>
+</resources>

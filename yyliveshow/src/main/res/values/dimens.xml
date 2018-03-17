@@ -1,0 +1,10 @@
+<resources>
+    <dimen name="ww_room_seat_hat_margintop">16dp</dimen>
+    <dimen name="ww_room_seat_hat_margintop2">25dp</dimen>
+    <dimen name="ww_room_person_card_hat_margintop">25dp</dimen>
+    <dimen name="ww_room_person_card_hat_margintop_neg">-25dp</dimen>
+    <dimen name="ww_room_person_card_pading">7dp</dimen>
+    <dimen name="ww_room_normal_emotion_size">72dp</dimen>
+    <dimen name="ww_room_owner_emotion_size">108dp</dimen>
+    <dimen name="ww_room_owner_emgagement_emotion_size">72dp</dimen>
+</resources>

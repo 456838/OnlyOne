@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 该文件描述了View的状态发生变化时，文字的颜色如何变化 -->
+    <item android:state_pressed="true" android:color="@color/UA.TitleBar.Button.Text.Pressed"/>
+    <item android:state_focused="true" android:color="@color/UA.TitleBar.Button.Text.Pressed"/>
+    <item android:state_checked="true" android:color="@color/UA.TitleBar.Button.Text.Pressed"/>
+    <item android:state_selected="true" android:color="@color/UA.TitleBar.Button.Text.Pressed"/>
+    <item android:state_enabled="false" android:color="@color/UA.TitleBar.Button.Text.Pressed"/>
+    <item android:color="@color/UA.TitleBar.Button.Text.Normal"/>
+</selector>

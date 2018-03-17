@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_focused="true">
+        <shape>
+    		<corners android:radius="@dimen/UA.Button.Flat.Corners" />
+    		<solid android:color="@color/UA.Button.Flat.Theme.Pressed" />
+    		<stroke android:width="@dimen/UA.Button.Flat.Border" android:color="@color/UA.Button.Flat.Theme.Border" /> 
+		</shape>
+    </item>
+    
+    <item android:state_pressed="true">
+        <shape>
+    		<corners android:radius="@dimen/UA.Button.Flat.Corners" />
+    		<solid android:color="@color/UA.Button.Flat.Theme.Pressed" />
+    		<stroke android:width="@dimen/UA.Button.Flat.Border" android:color="@color/UA.Button.Flat.Theme.Border" />
+		</shape>
+    </item>
+    
+    <item android:state_enabled="false">
+        <shape>
+    		<corners android:radius="@dimen/UA.Button.Flat.Corners" />
+    		<solid android:color="@color/UA.Button.Flat.Theme.Disabled" />
+    		<stroke android:width="@dimen/UA.Button.Flat.Border" android:color="@color/UA.Button.Flat.Theme.Border.Disabled" />
+		</shape>
+    </item>
+    
+    <item android:state_pressed="false">
+        <shape>
+    		<corners android:radius="@dimen/UA.Button.Flat.Corners" />
+    		<solid android:color="@color/UA.Button.Flat.Theme.Nomal" />
+    		<stroke android:width="@dimen/UA.Button.Flat.Border" android:color="@color/UA.Button.Flat.Theme.Border" />
+		</shape>
+    </item>
+
+</selector>

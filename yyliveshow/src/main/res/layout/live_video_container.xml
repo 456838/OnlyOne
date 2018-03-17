@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="250dp"
+    android:orientation="vertical">
+
+    <com.duowan.liveshow.view.widget.DoubleLayout
+        android:id="@+id/double_layout"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#ff000000">
+
+        <com.duowan.mobile.mediaproxy.YVideoViewLayout
+            android:id="@+id/yvLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ff000000"
+            android:baselineAligned="false"
+            android:orientation="horizontal" />
+
+        <com.duowan.mobile.mediaproxy.YVideoViewLayout
+            android:id="@+id/yvLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ff000000"
+            android:baselineAligned="false"
+            android:orientation="horizontal" />
+    </com.duowan.liveshow.view.widget.DoubleLayout>
+</LinearLayout>
+

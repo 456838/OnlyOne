@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/ua_fragment_verify_txt_title"
+        style="@style/UA.TextView.Normal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp" />
+
+    <View
+        style="@style/UA.Divider.Solid.Horizontal"
+        android:layout_marginTop="5dip" />
+
+    <LinearLayout style="@style/UA.EditText.Layout" >
+
+        <ImageView
+            style="@style/UA.EditText.DrawableLeft"
+            android:contentDescription="@string/ua_contentDescription"
+            android:src="@drawable/ua_ic_token" />
+
+        <com.yy.udbauth.ui.widget.UdbEditText
+            android:id="@+id/ua_fragment_verify_et_token"
+            style="@style/UA.EditText.Theme"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="number"
+            android:maxLength="30"
+            android:singleLine="true" />
+
+        <ImageButton
+            android:id="@+id/ua_fragment_verify_btn_clear_token"
+            style="@style/UA.EditText.DrawableRight"
+            android:contentDescription="@string/ua_contentDescription"
+            android:src="@drawable/ua_ic_delete" />
+    </LinearLayout>
+
+    <View style="@style/UA.Divider.Solid.Horizontal" />
+
+    <Button
+        android:id="@+id/ua_fragment_verify_btn_ok"
+        style="@style/UA.Button.Theme"
+        android:layout_width="fill_parent"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="37dp"
+        android:text="@string/ua_verify_btn_submit" />
+
+</LinearLayout>

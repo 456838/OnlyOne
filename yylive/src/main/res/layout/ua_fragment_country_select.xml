@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        style="@style/UA.EditText.Layout"
+        android:layout_height="wrap_content"
+        android:background="#f6f6f6"
+        android:orientation="vertical"
+        android:padding="0dip" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dip"
+            android:background="@drawable/ua_shape_edittext_round"
+            android:gravity="center_vertical" >
+
+            <ImageView
+                style="@style/UA.EditText.DrawableLeft"
+                android:layout_marginLeft="10dip"
+                android:contentDescription="@string/ua_contentDescription"
+                android:src="@drawable/ua_ic_search" />
+
+            <com.yy.udbauth.ui.widget.UdbEditText
+                android:id="@+id/ua_fragment_country_select_et_keyword"
+                style="@style/UA.EditText.Theme"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/ua_country_select_hint"
+                android:maxLength="30"
+                android:singleLine="true"
+                android:textColorHint="#c9c8ce"
+                android:textSize="15sp" />
+
+            <ImageButton
+                android:id="@+id/ua_fragment_country_select_btn_clear_keyword"
+                style="@style/UA.EditText.DrawableRight"
+                android:layout_marginRight="5dip"
+                android:contentDescription="@string/ua_contentDescription"
+                android:src="@drawable/ua_ic_delete" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.6dip"
+        android:background="#cccccc" />
+
+    <com.yy.udbauth.ui.widget.IndexableListView
+        android:id="@+id/ua_fragment_country_select_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="#000000"
+        android:divider="#dddddd"
+        android:dividerHeight="1px"
+        android:listSelector="@null" />
+
+</LinearLayout>

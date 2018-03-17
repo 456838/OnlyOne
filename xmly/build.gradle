@@ -1,0 +1,39 @@
+apply plugin: 'com.android.library'
+//apply plugin: 'com.android.application'
+//apply plugin: 'com.jakewharton.hugo'
+android {
+    compileSdkVersion "${compile_sdk_version}" as Integer
+    buildToolsVersion "${build_tools_version}"
+    defaultConfig {
+        minSdkVersion "${min_sdk_version}" as Integer
+        targetSdkVersion "${target_sdk_version}" as Integer
+//        applicationId "com.salton123.xm"
+        versionCode 1
+        versionName "1.0"
+        ndk {
+//            abiFilters "armeabi", "armeabi-v7a", "x86", "arm64-v8a"
+            abiFilters "armeabi-v7a"
+        }
+        vectorDrawables.useSupportLibrary = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile project(':onlyonebase')
+}
+
+
+//task to copy library to libs
+task copyXmly(type: Copy) {
+    from('build/outputs/apk/')
+    into('../app/src/main/assets/plugins/')
+    ///Rename the aar
+    rename('xmly-debug.apk', 'xmly-debug.jar')
+}

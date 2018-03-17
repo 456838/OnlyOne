@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="ua_contentDescription"></string>
+    
+    <string name="ua_title_login">登录</string>
+    <string name="ua_title_sms_login">手机短信登录</string>
+    <string name="ua_title_credit_login">凭证登录</string>
+    <string name="ua_title_ticket_login">票据登录</string>
+    <string name="ua_title_second_verify">安全验证</string>
+    <string name="ua_title_modify_password">修改密码</string>
+    <string name="ua_title_find_my_password">找回密码</string>
+    <string name="ua_title_register1">注册帐号</string>
+    <string name="ua_title_register2">设置密码</string>
+    <string name="ua_title_country_select">选择国家</string>
+    <string name="ua_title_other">其他功能</string>
+
+    <string name="ua_login_username_hint">通行证/YY号/手机/邮箱</string>
+    <string name="ua_login_password_hint">密码</string>
+    <string name="ua_login_btn_login">登　录</string>
+    <string name="ua_login_btn_find_my_password">忘记密码?</string>
+    <string name="ua_login_btn_sms_login">手机短信登录</string>
+    <string name="ua_login_btn_register">立即注册>></string>
+    
+    <string name="ua_reg_mobile_country_hint">国家地区</string>
+    <string name="ua_reg_mobile_country_name">中国大陆</string>
+    <string name="ua_reg_mobile_country_number">+86</string>
+    <string name="ua_reg_mobile_hint">手机号</string>
+    <string name="ua_reg_sms_code_hint">验证码</string>
+    <string name="ua_reg_btn_get_sms_code">获取验证码</string>
+    <string name="ua_reg_btn_get_sms_code_disable">重新获取(%d)</string>
+    <string name="ua_reg_btn_reg">马上注册</string>
+    <string name="ua_reg_btn_next">下一步</string>
+    <string name="ua_reg_btn_skip">跳过>></string>
+    
+    <string name="ua_sms_login_mobile_hint">手机号</string>
+    <string name="ua_sms_login_sms_code_hint">验证码</string>
+    <string name="ua_sms_login_btn_get_sms_code">获取验证码</string>
+    <string name="ua_sms_login_btn_get_sms_code_disable">重新获取(%d)</string>
+    <string name="ua_sms_login_btn_login">马上登录</string>
+    <string name="ua_sms_login_btn_password_login">帐号密码登录</string>
+    
+    <string name="ua_find_my_password_hint">请输入忘记密码的帐号</string>
+    <string name="ua_find_my_password_user_hint">通行证/YY号/手机/邮箱</string>
+    <string name="ua_find_my_password_mobile_hint">请输入该帐号的密保手机号：%s</string>
+    <string name="ua_find_my_password_mobile_et_hint">请输入密保手机号</string>
+    <string name="ua_find_my_password_sms_code_hint">请输入您收到的短信验证码</string>
+    <string name="ua_find_my_password_sms_code_et_hint">验证码</string>
+    <string name="ua_find_my_password_btn_get_sms_code">获取验证码</string>
+    <string name="ua_find_my_password_btn_get_sms_code_disable">重新获取(%d)</string>
+    <string name="ua_find_my_password_btn_next">下一步</string>
+    <string name="ua_find_my_password_new_password_hint">请输入新密码</string>
+    <string name="ua_find_my_password_btn_submit">提　交</string>
+    <string name="ua_find_my_password_check_failed"  formatted="false">请求失败，%s</string>
+    <string name="ua_find_my_password_tip"><![CDATA[1. 密码由8-20字符组成，区分大小写。\n2. 不能使用9位以下纯数字，不能有空格。]]></string>
+    
+    <string name="ua_modify_password_mobile_hint">登录手机号</string>
+    <string name="ua_modify_password_sms_code_hint">验证码</string>
+    <string name="ua_modify_password_sms_code_tv_phone_ok_hint">请验证您的密保手机%s</string>
+    <string name="ua_modify_password_sms_code_tv_sms_ok_hint">已发送短信验证码到您的密保手机%s</string>
+    <string name="ua_modify_password_btn_get_sms_code">获取验证码</string>
+    <string name="ua_modify_password_btn_get_sms_code_disable">重新获取(%d)</string>
+    <string name="ua_modify_password_new_password_hint">请输入新密码</string>
+    <string name="ua_modify_password_new_password_tv_hint">请输入新密码</string>
+    <string name="ua_modify_password_check_failed"  formatted="false">请求失败，%s</string>
+    <string name="ua_modify_password_btn_next">下一步</string>
+    
+    <string name="ua_modify_password_btn_submit">提　交</string>
+    <string name="ua_modify_password_tip"><![CDATA[1. 密码由8-20字符组成，区分大小写。\n2. 不能使用9位以下纯数字，不能有空格。]]></string>
+    
+    <string name="ua_verify_btn_submit">确　定</string>
+    <string name="ua_verify_btn_get_sms_code">获取验证码</string>
+    <string name="ua_verify_btn_get_sms_code_disable">重新获取(%d)</string>
+    <string name="ua_verify_btn_get_goto_sms_app">马上去发送</string>
+    <string name="ua_verify_btn_refresh_pic">换一张</string>
+    <string name="ua_verify_btn_goto_sms_app">去发送</string>
+    <string name="ua_verify_txt_other_verify">其他验证方式</string>
+    <string name="ua_verify_txt_not_install_yet">还没安装？</string>
+    
+    
+    <string name="ua_register_new_password_hint">请输入密码</string>
+    <string name="ua_register_new_password_tv_hint">请输入新密码</string>
+    <string name="ua_register_btn_submit">确　定</string>
+    <string name="ua_register_txt_agree">我已阅读并同意</string>
+    <string name="ua_register_txt_input_mobile_phone">请输入手机号码，获取免费验证短信</string>
+    <string name="ua_register_txt_input_sms_code">请输入您收到的短信验证码</string>
+    <string name="ua_register_txt_user_agreement">《用户服务协议》</string>
+    <string name="ua_register_password_tip"><![CDATA[1. 密码由8-20字符组成，区分大小写。\n2. 不能使用9位以下纯数字，不能有空格。]]></string>
+    
+    <string name="ua_empty_mobile">请输入手机号</string>
+    <string name="ua_empty_username">请输入帐号</string>
+    <string name="ua_empty_username2">帐号不能为空</string>
+    <string name="ua_empty_sms_code">请填写验证码</string>
+    <string name="ua_empty_password">请输入密码</string>
+    <string name="ua_empty_hardware_token">请输入动态口令</string>
+    <string name="ua_empty_mobile_token">请输入动态口令</string>
+    <string name="ua_empty_picture_token">请输入图中的字符</string>
+    
+    <string name="ua_invalid_mobile">请输入正确的手机号</string>
+    <string name="ua_invalid_password_with_9_number">密码不能是9位以下数字</string>
+    <string name="ua_invalid_password_within_blank">密码不能包含空格</string>
+    <string name="ua_invalid_password_out_8_20"><![CDATA[密码长度必须是8-20位字符]]></string>
+    <string name="ua_invalid_second_verify_content">验证失败，请重试</string>
+    <string name="ua_invalid_second_verify_type">验证失败</string>
+    
+    
+    <string name="ua_timeout_refresh_picture">刷新请求超时，请稍候重试</string>
+    <string name="ua_timeout_send_sms_code">请求超时，请稍候重试</string>
+    <string name="ua_timeout_check_reg">请求超时，请稍候重试</string>
+    <string name="ua_timeout_check_upsms">请求超时，请稍候重试</string>
+    <string name="ua_timeout_set_password">请求超时，请稍候重试</string>
+    <string name="ua_timeout_check_modpwd">请求超时，请稍候重试</string>
+    <string name="ua_timeout_verify_sms">请求超时，请稍候重试</string>
+    <string name="ua_timeout_login">请求超时，请稍候重试</string>
+    <string name="ua_timeout_smslogin">请求超时，请稍候重试</string>
+    <string name="ua_timeout_register">请求超时，请稍候重试</string>
+    
+    <string name="ua_requesting">"正在提交请求……"</string>
+    <string name="ua_checking_user">正在检查帐号……</string>
+    <string name="ua_requesting_sms_code">正在请求下发验证码短信……</string>
+    <string name="ua_requesting_sms_verify">正在检验验证码……</string>
+    
+    <string name="ua_send_sms_success">短信验证码已发送，请查收</string>
+    <string name="ua_send_sms_failed"  formatted="false">短信下发失败，%s</string>
+    <string name="ua_verify_sms_failed"  formatted="false">短信检验失败：%s</string>
+    
+    <string name="ua_set_passwrod_success">设置成功，请重新登录</string>
+    <string name="ua_register_success">注册成功</string>
+    <string name="ua_set_passwrod_failed"  formatted="false">密码设置失败，%s</string>
+    
+    <string name="ua_checking">正在验证……</string>
+    <string name="ua_no_sms_app_detected">没有检测到可用的短信APP</string>
+    <string name="ua_has_sent_sms">已发送，直接验证</string>
+    <string name="ua_can_not_receive_sms">收不到验证码？</string>
+    
+    <string name="ua_logining">正在登录……</string>
+    <string name="ua_sms_logining">登录成功</string>
+    <string name="ua_login_success">登录成功</string>
+    <string name="ua_login_failed"  formatted="false">登录失败，%s</string>
+    <string name="ua_login_failed_with_empty_verify">登录失败，无有效的验证内容</string>
+    <string name="ua_login_failed_with_err_piccode">图片验证码错误，请重新输入</string>
+    <string name="ua_login_failed_with_err_smscode">短信验证码错误，请重新输入</string>
+    <string name="ua_login_failed_with_err_mcode">手机令牌错误，请重新输入</string>
+    <string name="ua_login_failed_with_err_hcode">硬件令牌错误，请重新输入</string>
+    <string name="ua_login_failed_with_no_sms_up">系统还没收到您的短信，请稍后重试</string>
+    
+    <string name="ua_credit_is_unavailable">凭证登录已过期，请重新登录</string>
+    
+    <string name="ua_refresh_picture_failed_with_error">刷新出错，请重试</string>
+    <string name="ua_refresh_picture_failed_when_decode">刷新出错，请重试</string>
+    <string name="ua_refresh_picture_failed"  formatted="false">刷新图片验证码失败，%s</string>
+    
+    <string name="ua_uncheck_user_agreement">请先同意用户协议</string>
+    
+    <string name="ua_a_tip">温馨提示</string>
+    <string name="ua_abort_opreation">您要放弃%s吗？</string>
+    <string name="ua_register_success_and_set_password">注册成功，请设置密码</string>
+    <string name="ua_register_failed_and_login">该手机号码已注册，是否直接登录？</string>
+    <string name="ua_register_failed"  formatted="false">注册失败，%s</string>
+    <string name="ua_negative">否</string>
+    <string name="ua_positive">是</string>
+    <string name="ua_ok">确定</string>
+    <string name="ua_dialog_title">提示</string>
+    <string name="ua_dialog_ok">确定</string>
+    <string name="ua_dialog_recheck">继续验证</string>
+    <string name="ua_dialog_cancel">取消</string>
+    
+    <string name="ua_web_verify_failed">验证失败，请重试</string>
+    
+    <string name="ua_country_select_hint">输入国家名称或拼音首字母</string>
+    
+    <string name="ua_network_unavailable">网络不可用，请检查网络配置或稍候重试</string>
+    <string name="ua_send_request_failed">发送请求失败，请稍候重试</string>
+    <string name="ua_send_request_too_quick">你的操作太快，请稍候重试(1)</string>
+    <string name="ua_send_request_marshall_err">发送请求失败，请稍候重试(2)</string>
+    <string name="ua_send_request_not_init">发送请求失败，未初始化，请稍候重试(255)</string>
+    <string name="ua_send_request_unknown_err">发送请求失败，请稍候重试(99)</string>
+    
+</resources>

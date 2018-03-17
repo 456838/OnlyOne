@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="dark_black">#cc262626</color>
+    <color name="transparent">#00000000</color>
+    <color name="ww_voice_item_number_female">#cb4f64</color>
+    <color name="ww_voice_item_number_male">#1d89b7</color>
+    <color name="ww_white">#FFFFFF</color>
+    <color name="font_default">#2d2d2d</color>
+    <color name="hint_color">#d7d7d7</color>
+</resources>
