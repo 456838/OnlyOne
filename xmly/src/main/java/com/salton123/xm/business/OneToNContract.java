@@ -43,6 +43,10 @@ public interface OneToNContract {
         void onSearchedTracksError(int resCode, String errorMsg);
     }
 
+    interface TingShuIView extends BaseView{
+
+    }
+
     interface TracksFmIView extends BaseView {
 
         void showTracks(TrackList list);

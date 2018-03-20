@@ -8,6 +8,7 @@ import com.salton123.mvp.util.RxUtil;
 import com.salton123.util.log.MLog;
 import com.salton123.xm.fm.AlbumListFragment;
 import com.salton123.xm.fm.SearchedTracksFragment;
+import com.salton123.xm.fm.TingShuFragment;
 import com.salton123.xm.model.ApiMethod;
 import com.salton123.xm.model.HotVoiceItem;
 import com.ximalaya.ting.android.opensdk.constants.DTransferConstants;
@@ -32,10 +33,10 @@ import io.reactivex.schedulers.Schedulers;
  * ModifyTime: 17:29
  * Description:
  */
-public class OneToNPresenter extends RxPresenter<OneToNContract.IView> implements OneToNContract.Presenter{
+public class OneToNPresenter extends RxPresenter<OneToNContract.IView> implements OneToNContract.Presenter {
     public static final String TAG = "OneToNPresenter";
 
-//    public OneToNPresenter(){
+    //    public OneToNPresenter(){
 //        XmlyInitializer.getInstance().addPlayerStatusListener(this);
 //    }
     @Override
@@ -83,10 +84,12 @@ public class OneToNPresenter extends RxPresenter<OneToNContract.IView> implement
     @Override
     public void getIndexFmData() {
         List<Pair<Fragment, String>> mData = new ArrayList<>();
+        mData.add(new Pair<Fragment, String>(TingShuFragment.newInstance(TingShuFragment.class, "超品相师"), "九灯和尚"));
         mData.add(new Pair<Fragment, String>(AlbumListFragment.newInstance(AlbumListFragment.class, "郭德纲"), "郭德纲"));
         mData.add(new Pair<Fragment, String>(SearchedTracksFragment.newInstance(SearchedTracksFragment.class, "岳云鹏"), "岳云鹏"));
         mData.add(new Pair<Fragment, String>(SearchedTracksFragment.newInstance(SearchedTracksFragment.class, "高晓松"), "高晓松"));
         mData.add(new Pair<Fragment, String>(SearchedTracksFragment.newInstance(SearchedTracksFragment.class, "吴晓波"), "吴晓波"));
+        mData.add(new Pair<Fragment, String>(SearchedTracksFragment.newInstance(SearchedTracksFragment.class, "采采"), "段子来了"));
         mData.add(new Pair<Fragment, String>(SearchedTracksFragment.newInstance(SearchedTracksFragment.class, "采采"), "段子来了"));
         if (mView instanceof OneToNContract.IndexFmIView) {
             ((OneToNContract.IndexFmIView) mView).onIndexFmData(mData);
