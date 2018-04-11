@@ -4,16 +4,18 @@ import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.annotation.TargetApi;
 import android.content.Context;
-import android.graphics.*;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.RadialGradient;
+import android.graphics.Shader;
 import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.OvalShape;
 import android.os.Build;
 import android.support.v4.view.ViewCompat;
+import android.support.v4.widget.ImageViewCompat;
 import android.util.AttributeSet;
 import android.view.animation.LinearInterpolator;
-import android.widget.ImageView;
-
-import com.facebook.drawee.view.SimpleDraweeView;
 
 /**
  * Created with Android Studio.
@@ -24,7 +26,7 @@ import com.facebook.drawee.view.SimpleDraweeView;
  * Stole from {@link android.support.v4.widget.SwipeRefreshLayout}'s implementation to display beautiful shadow
  * for circle ImageView.
  */
-public class ShadowImageView extends SimpleDraweeView {
+public class ShadowImageView extends ImageViewCompat {
 
     private static final int KEY_SHADOW_COLOR = 0x1E000000;
     private static final int FILL_SHADOW_COLOR = 0x3D000000;

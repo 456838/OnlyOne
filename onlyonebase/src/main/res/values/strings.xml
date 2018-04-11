@@ -4,6 +4,8 @@
     <string name="app_name">相声专场</string>
     <string name="image_transition">image_transition</string>
     <string name="transition_mini_player">mini_player_transition</string>
+    <string name="small_video_footer_loading">加载中…</string>
+    <string name="small_video_footer_no_more">已加载全部内容</string>
     <!--<string name="hello_world">Hello world!</string>-->
     <!--<string name="remove">移除</string>-->
     <!--<string name="stop">停止</string>-->
