@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 import com.duowan.onlyone.R;
 import com.duowan.onlyone.business.video.VideoFragmentContract;
 import com.duowan.onlyone.business.video.VideoFragmentPresenter;
-import com.duowan.onlyone.func.video.model.VideoInfoEventArgs;
 import com.duowan.onlyone.model.entity.VideoListBean;
 import com.duowan.onlyone.view.adapter.VideoAdapter;
 import com.duowan.onlyone.view.callback.EndLessOnScrollListener;
@@ -64,7 +63,7 @@ public class VideoFragment extends BaseSupportPresenterFragment<VideoFragmentPre
                 Bundle bundle = new Bundle();
                 bundle.putParcelableArrayList(ARG_ITEM, (ArrayList<? extends Parcelable>) mAdapter.getData());
                 bundle.putInt("position", position);
-                EventBus.getDefault().post(new StartBrotherEvent(VideoDetailFragment.newInstance(VideoDetailFragment.class, bundle)));
+                EventBus.getDefault().post(new StartBrotherEvent(VideoDetailComponent.Companion.newInstance(bundle)));
             }
         });
         recycler.addOnScrollListener(new EndLessOnScrollListener(mLinearLayoutManager, 0) {

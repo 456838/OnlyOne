@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.yy.mobile.memoryrecycle.views.YYRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent">
+
+
+    <com.yy.mobile.memoryrecycle.views.YYRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include layout="@layout/video_home_detail_fragment" />
+
+        <com.salton123.onlyonebase.view.verticalswitch.SmallVideoTouchInterceptRelativeLayout
+            android:id="@+id/vertical_switch_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/background_dark" />
+
+    </com.yy.mobile.memoryrecycle.views.YYRelativeLayout>
+
+
+</com.yy.mobile.memoryrecycle.views.YYRelativeLayout>
