@@ -10,7 +10,7 @@ import android.os.Parcelable;
 
 public class ItemListBean implements Parcelable {
     private String type;
-    private DataBean data;
+    public DataBean data;
 
     public String getType() {
         return type;

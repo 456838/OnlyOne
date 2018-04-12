@@ -1,6 +1,7 @@
 package com.duowan.onlyone.fm.video;
 
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -10,8 +11,8 @@ import android.view.ViewGroup;
 import com.duowan.onlyone.R;
 import com.duowan.onlyone.business.video.VideoFragmentContract;
 import com.duowan.onlyone.business.video.VideoFragmentPresenter;
+import com.duowan.onlyone.func.video.model.VideoInfoEventArgs;
 import com.duowan.onlyone.model.entity.VideoListBean;
-import com.duowan.onlyone.model.entity.kaiyan.ItemListBean;
 import com.duowan.onlyone.view.adapter.VideoAdapter;
 import com.duowan.onlyone.view.callback.EndLessOnScrollListener;
 import com.salton123.event.StartBrotherEvent;
@@ -20,6 +21,8 @@ import com.salton123.onlyonebase.view.widget.StatusTitleBar;
 import com.salton123.util.ScreenUtils;
 
 import org.greenrobot.eventbus.EventBus;
+
+import java.util.ArrayList;
 
 import cn.bingoogolapple.baseadapter.BGAOnRVItemClickListener;
 import cn.bingoogolapple.refreshlayout.BGANormalRefreshViewHolder;
@@ -51,13 +54,17 @@ public class VideoFragment extends BaseSupportPresenterFragment<VideoFragmentPre
         mPresenter = new VideoFragmentPresenter();
     }
 
+
     @Override
     public void InitListener() {
         mAdapter.setOnRVItemClickListener(new BGAOnRVItemClickListener() {
             @Override
             public void onRVItemClick(ViewGroup parent, View itemView, int position) {
-                ItemListBean videoListBean = mAdapter.getItem(position);
-                EventBus.getDefault().post(new StartBrotherEvent(newInstance(VideoDetailFragment.class, videoListBean.getData())));
+                mAdapter.getItem(position);
+                Bundle bundle = new Bundle();
+                bundle.putParcelableArrayList(ARG_ITEM, (ArrayList<? extends Parcelable>) mAdapter.getData());
+                bundle.putInt("position", position);
+                EventBus.getDefault().post(new StartBrotherEvent(VideoDetailFragment.newInstance(VideoDetailFragment.class, bundle)));
             }
         });
         recycler.addOnScrollListener(new EndLessOnScrollListener(mLinearLayoutManager, 0) {
