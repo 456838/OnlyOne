@@ -22,7 +22,7 @@
             android:layout_height="150dp"
             android:layout_gravity="center"
             android:scaleType="centerInside"
-            android:src="@drawable/default_pic_load"/>
+            android:src="@drawable/salton_load_pic"/>
 
         <LinearLayout
             android:layout_width="match_parent"

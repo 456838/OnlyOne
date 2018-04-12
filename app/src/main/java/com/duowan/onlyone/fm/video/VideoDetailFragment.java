@@ -8,12 +8,12 @@ import com.duowan.onlyone.R;
 import com.duowan.onlyone.model.entity.kaiyan.DataBean;
 import com.duowan.onlyone.model.entity.utils.DateUtil;
 import com.salton123.base.BaseSupportSwipeBackFragment;
+import com.salton123.onlyonebase.FrescoImageLoader;
 import com.xiao.nicevideoplayer.NiceVideoPlayer;
 import com.xiao.nicevideoplayer.NiceVideoPlayerController;
 import com.xiao.nicevideoplayer.NiceVideoPlayerManager;
 import com.xiao.nicevideoplayer.TxVideoPlayerController;
 
-import org.xutils.x;
 
 
 public class VideoDetailFragment extends BaseSupportSwipeBackFragment {
@@ -47,7 +47,7 @@ public class VideoDetailFragment extends BaseSupportSwipeBackFragment {
         mPlayerController = new TxVideoPlayerController(this.activity());
         videoplayer.setController(mPlayerController);
         videoplayer.setPlayerType(NiceVideoPlayer.TYPE_NATIVE);
-        x.image().bind(mPlayerController.imageView(), dataBean.getCover().getDetail());
+        FrescoImageLoader.Companion.display(mPlayerController.imageView(), dataBean.getCover().getDetail());
         mPlayerController.setTitle(dataBean.getTitle());
         videoplayer.setUp(dataBean.getPlayUrl(), null);
         title.setText(dataBean.getTitle());

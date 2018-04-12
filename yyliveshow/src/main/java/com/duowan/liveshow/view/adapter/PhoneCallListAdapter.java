@@ -1,7 +1,6 @@
 package com.duowan.liveshow.view.adapter;
 
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,11 +10,10 @@ import android.widget.TextView;
 import com.duowan.liveshow.R;
 import com.salton123.base.AdapterBase;
 import com.salton123.base.ViewHolder;
+import com.salton123.onlyonebase.FrescoImageLoader;
+import com.salton123.util.ScreenUtils;
 import com.yy.live.model.bean.channel.micinfo.MicTopInfo;
 
-import org.xutils.common.util.DensityUtil;
-import org.xutils.image.ImageOptions;
-import org.xutils.x;
 
 /**
  * User: 巫金生(newSalton@outlook.com)
@@ -47,16 +45,11 @@ public class PhoneCallListAdapter extends AdapterBase<MicTopInfo> {
     }
 
     public static void display(ImageView p_ImageView, String p_Uri) {
-        int screenWidth = DensityUtil.getScreenWidth();
-        int screenHeight = DensityUtil.getScreenHeight();
-        ImageOptions options = new ImageOptions.Builder().setFadeIn(true)
-                .setConfig(Bitmap.Config.ALPHA_8)
-                .setSize(screenWidth / 2, screenHeight / 2)
-                // .setFailureDrawableId(R.mipmap.default_pic_load_error)
-                .setLoadingDrawableId(R.drawable.yy_bear_logo)
-                .build();
+        int screenWidth = ScreenUtils.getScreenWidth(p_ImageView.getContext());
+        int screenHeight = ScreenUtils.getScreenHeight(p_ImageView.getContext());
         if (!TextUtils.isEmpty(p_Uri)) {
-            x.image().bind(p_ImageView, p_Uri, options);
+            FrescoImageLoader.Companion.display(p_ImageView, p_Uri);
+
         } else {
             p_ImageView.setImageResource(R.drawable.yy_bear_logo);
         }

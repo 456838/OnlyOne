@@ -23,7 +23,7 @@
             android:background="@color/colorPrimary"
             android:orientation="horizontal">
 
-            <com.salton123.widget.AutoClearEditView
+            <EditText
                 android:id="@+id/et_input_search"
                 android:layout_width="match_parent"
                 android:layout_height="32dp"
@@ -31,8 +31,6 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="5dp"
                 android:layout_toLeftOf="@+id/layout_right"
-                android:background="@drawable/bg_search_top_btn_unactived_new"
-                android:drawableLeft="@drawable/fragment_search_smart_icon"
                 android:drawablePadding="10dp"
                 android:hint="主播 直播 作品 短拍 手频"
                 android:imeOptions="actionSearch"

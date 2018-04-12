@@ -8,12 +8,11 @@ import com.duowan.onlyone.R;
 import com.duowan.onlyone.model.entity.kaiyan.DataBean;
 import com.duowan.onlyone.model.entity.kaiyan.ItemListBean;
 import com.duowan.onlyone.model.entity.utils.DateUtil;
-import com.facebook.drawee.view.DraweeView;
-import com.salton123.common.image.FrescoImageLoader;
+import com.facebook.drawee.view.SimpleDraweeView;
+import com.salton123.onlyonebase.FrescoImageLoader;
 
-import cn.bingoogolapple.androidcommon.adapter.BGARecyclerViewAdapter;
-import cn.bingoogolapple.androidcommon.adapter.BGAViewHolderHelper;
-
+import cn.bingoogolapple.baseadapter.BGARecyclerViewAdapter;
+import cn.bingoogolapple.baseadapter.BGAViewHolderHelper;
 
 public class VideoAdapter extends BGARecyclerViewAdapter<ItemListBean> {
     public VideoAdapter(RecyclerView recyclerView) {
@@ -29,7 +28,9 @@ public class VideoAdapter extends BGARecyclerViewAdapter<ItemListBean> {
     public int getItemViewType(int position) {
         if (getItem(position).getType().equals("video")) {
             return R.layout.video_item;
-        } else return R.layout.null_item;
+        } else {
+            return R.layout.null_item;
+        }
     }
 
     @Override
@@ -37,7 +38,7 @@ public class VideoAdapter extends BGARecyclerViewAdapter<ItemListBean> {
         if (getItem(position).getType().equals("video")) {
             DataBean dataBean = model.getData();
             if (dataBean != null) {
-                FrescoImageLoader.display((DraweeView) helper.getView(R.id.img), dataBean.getCover() != null ? dataBean.getCover().getDetail() : "");
+                FrescoImageLoader.Companion.display((SimpleDraweeView) helper.getView(R.id.img), dataBean.getCover() != null ? dataBean.getCover().getDetail() : "");
                 helper.setText(R.id.title, model.getData().getTitle());
                 StringBuilder stringBuilder = new StringBuilder();
                 stringBuilder.append("#").append(dataBean.getCategory())
@@ -47,7 +48,7 @@ public class VideoAdapter extends BGARecyclerViewAdapter<ItemListBean> {
                         .append(DateUtil.formatTime2(dataBean.getDuration()));
                 helper.setText(R.id.description, stringBuilder.toString());
             }
-        }else{
+        } else {
             helper.setVisibility(R.id.ll_holder, View.GONE);
         }
     }

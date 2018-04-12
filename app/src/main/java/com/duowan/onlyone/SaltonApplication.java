@@ -1,6 +1,9 @@
 package com.duowan.onlyone;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
 import com.salton123.base.ApplicationBase;
+import com.shuyu.gsygiideloader.GSYGlideImageLoader;
+import com.shuyu.gsyimageloader.GSYImageLoaderManager;
 
 import me.yokeyword.fragmentation.Fragmentation;
 import me.yokeyword.fragmentation.helper.ExceptionHandler;
@@ -33,9 +36,11 @@ public class SaltonApplication extends ApplicationBase {
                     }
                 })
                 .install();
+        Fresco.initialize(this);
+        GSYImageLoaderManager.Companion.initialize(new GSYGlideImageLoader(this));
     }
 
-    public void sayHello(){
+    public void sayHello() {
 
     }
 }

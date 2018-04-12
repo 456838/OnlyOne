@@ -2,12 +2,11 @@ package com.salton123.xm.fm;
 
 import android.annotation.SuppressLint;
 import android.support.v7.widget.AppCompatImageView;
-import android.support.v7.widget.AppCompatSeekBar;
 import android.view.View;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-import com.salton123.common.image.FrescoImageLoader;
+import com.salton123.onlyonebase.FrescoImageLoader;
 import com.salton123.onlyonebase.view.widget.ShadowImageView;
 import com.salton123.xm.R;
 import com.salton123.xm.business.MusicPlayerContract;
@@ -56,7 +55,7 @@ public class MusicPlayerComponent extends BaseMusicPlayerComponent implements Mu
     public void onTrack(Track track) {
         super.onTrack(track);
         image_view_album.startRotateAnimation();
-        FrescoImageLoader.display(image_view_album, track.getCoverUrlLarge());
+        FrescoImageLoader.Companion.display(image_view_album, track.getCoverUrlLarge());
         seek_bar.setMax(XmlyInitializer.getInstance().getPlayerManager().getDuration());
         mTracks = XmlyInitializer.getInstance().getPlayerManager().getPlayList();
     }
@@ -225,9 +224,10 @@ public class MusicPlayerComponent extends BaseMusicPlayerComponent implements Mu
         int hour = minute / 60;
         minute %= 60;
         int second = duration % 60;
-        if (hour != 0)
+        if (hour != 0) {
             return String.format("%2d:%02d:%02d", hour, minute, second);
-        else
+        } else {
             return String.format("%02d:%02d", minute, second);
+        }
     }
 }

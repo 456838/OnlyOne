@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
-
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 android {
     useLibrary 'org.apache.http.legacy'
     compileSdkVersion "${compile_sdk_version}" as Integer

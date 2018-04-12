@@ -3,14 +3,15 @@ package com.salton123.xm.view.adapter;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.facebook.drawee.view.DraweeView;
-import com.salton123.common.image.FrescoImageLoader;
+import com.facebook.drawee.view.SimpleDraweeView;
+import com.salton123.onlyonebase.FrescoImageLoader;
 import com.salton123.util.DateUtils;
 import com.salton123.xm.R;
 import com.ximalaya.ting.android.opensdk.model.album.Album;
 
-import cn.bingoogolapple.androidcommon.adapter.BGARecyclerViewAdapter;
-import cn.bingoogolapple.androidcommon.adapter.BGAViewHolderHelper;
+import cn.bingoogolapple.baseadapter.BGARecyclerViewAdapter;
+import cn.bingoogolapple.baseadapter.BGAViewHolderHelper;
+
 
 /**
  * User: 巫金生(newSalton@outlook.com)
@@ -34,7 +35,7 @@ public class AlbumAdapter extends BGARecyclerViewAdapter<Album> {
 //                .setText(R.id.post_time, model.getAlbumIntro() + "")
  ;
         if (model.getLastUptrack() == null) helper.getView(R.id.subhead).setVisibility(View.GONE);
-        FrescoImageLoader.display((DraweeView) helper.getView(R.id.sdv_thumbnail), model.getCoverUrlLarge());
+        FrescoImageLoader.Companion.display((SimpleDraweeView) helper.getView(R.id.sdv_thumbnail), model.getCoverUrlLarge());
 //        LogUtils.e("aa" + new GsonBuilder().setPrettyPrinting().create().toJson(model));
     }
 }

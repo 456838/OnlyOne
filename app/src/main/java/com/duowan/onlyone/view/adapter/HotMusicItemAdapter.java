@@ -7,11 +7,11 @@ import android.view.ViewGroup;
 
 import com.duowan.onlyone.R;
 import com.duowan.onlyone.model.entity.yinyuetai.VideoBean;
+import com.salton123.onlyonebase.FrescoImageLoader;
 import com.xiao.nicevideoplayer.Clarity;
 import com.xiao.nicevideoplayer.NiceVideoPlayer;
 import com.xiao.nicevideoplayer.TxVideoPlayerController;
 
-import org.xutils.x;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,7 +41,8 @@ public class HotMusicItemAdapter extends RecyclerView.Adapter<HotMusicItemAdapte
         final VideoBean videoBean = videoList.get(position);
         TxVideoPlayerController controller = new TxVideoPlayerController(holder.videoplayer.getContext());
         holder.setController(controller);
-        x.image().bind(controller.imageView(), videoBean.getAlbumImg());
+        FrescoImageLoader.Companion.display(controller.imageView(), videoBean.getAlbumImg());
+        // x.image().bind(controller.imageView(), videoBean.getAlbumImg());
         List<Clarity> mClarities = new ArrayList<>();
         mClarities.add(new Clarity("标清", "270p", videoBean.getUrl()));
         mClarities.add(new Clarity("高清", "480p", videoBean.getHdUrl()));

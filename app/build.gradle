@@ -1,6 +1,7 @@
 //apply plugin: 'com.android.application'
 apply plugin: 'com.android.application'
-
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion "${compile_sdk_version}" as Integer
     buildToolsVersion "${build_tools_version}"
@@ -49,5 +50,6 @@ dependencies {
     compile 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.4@aar'
     compile project(path: ':xmly')
     compile 'com.github.xiaoyanger0825:NiceVieoPlayer:v2.2'
+    compile 'cn.bingoogolapple:bga-refreshlayout:1.1.8@aar'
 }
 

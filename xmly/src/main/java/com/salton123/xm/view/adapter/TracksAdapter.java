@@ -9,8 +9,8 @@ import com.salton123.util.SizeUtils;
 import com.salton123.xm.R;
 import com.ximalaya.ting.android.opensdk.model.track.Track;
 
-import cn.bingoogolapple.androidcommon.adapter.BGARecyclerViewAdapter;
-import cn.bingoogolapple.androidcommon.adapter.BGAViewHolderHelper;
+import cn.bingoogolapple.baseadapter.BGARecyclerViewAdapter;
+import cn.bingoogolapple.baseadapter.BGAViewHolderHelper;
 
 /**
  * User: 巫金生(newSalton@outlook.com)

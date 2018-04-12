@@ -13,8 +13,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
-import com.salton123.common.image.FrescoImageLoader;
 import com.salton123.mvp.ui.BaseSupportPresenterFragment;
+import com.salton123.onlyonebase.FrescoImageLoader;
 import com.salton123.util.EventUtil;
 import com.salton123.xm.R;
 import com.salton123.xm.business.OneToNContract;
@@ -33,8 +33,8 @@ import com.ximalaya.ting.android.sdkdownloader.exception.AddDownloadException;
 import java.util.ArrayList;
 import java.util.List;
 
-import cn.bingoogolapple.androidcommon.adapter.BGAOnItemChildClickListener;
-import cn.bingoogolapple.androidcommon.adapter.BGAOnRVItemClickListener;
+import cn.bingoogolapple.baseadapter.BGAOnItemChildClickListener;
+import cn.bingoogolapple.baseadapter.BGAOnRVItemClickListener;
 
 
 /**
@@ -226,7 +226,7 @@ public class TracksFragment extends BaseSupportPresenterFragment<OneToNContract.
         SimpleDraweeView sdv_thumbnail = (SimpleDraweeView) ll_track_intro.findViewById(R.id.sdv_thumbnail);
         TextView tv_title = (TextView) ll_track_intro.findViewById(R.id.title);
         TextView tv_expandable = (TextView) ll_track_intro.findViewById(R.id.expandable_text);
-        FrescoImageLoader.display(sdv_thumbnail, list.getCoverUrlLarge());
+        FrescoImageLoader.Companion.display(sdv_thumbnail, list.getCoverUrlLarge());
         if (StringUtil.isBlank(list.getAlbumTitle())) {
             tv_title.setVisibility(View.GONE);
         }

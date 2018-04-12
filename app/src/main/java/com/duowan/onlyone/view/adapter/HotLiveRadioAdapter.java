@@ -3,12 +3,12 @@ package com.duowan.onlyone.view.adapter;
 import android.support.v7.widget.RecyclerView;
 
 import com.duowan.onlyone.R;
-import com.facebook.drawee.view.SimpleDraweeView;
-import com.salton123.common.image.FrescoImageLoader;
 import com.duowan.onlyone.model.entity.YYHomeIndex;
+import com.facebook.drawee.view.SimpleDraweeView;
+import com.salton123.onlyonebase.FrescoImageLoader;
 
-import cn.bingoogolapple.androidcommon.adapter.BGARecyclerViewAdapter;
-import cn.bingoogolapple.androidcommon.adapter.BGAViewHolderHelper;
+import cn.bingoogolapple.baseadapter.BGARecyclerViewAdapter;
+import cn.bingoogolapple.baseadapter.BGAViewHolderHelper;
 
 /**
  * User: 巫金生(newSalton@outlook.com)
@@ -26,7 +26,8 @@ public class HotLiveRadioAdapter extends BGARecyclerViewAdapter<YYHomeIndex.Data
 //        ImageView living_thumb_asr  = helper.getImageView(R.id.iv_thumbnail);
 //        ImageLoaderUtils.display(living_thumb_asr,model.getThumb());
         SimpleDraweeView iv_thumbnail = helper.getView(R.id.iv_thumbnail);
-        FrescoImageLoader.displayInCenterInside(mContext, iv_thumbnail, model.getThumb());
+
+        FrescoImageLoader.Companion.display(iv_thumbnail, model.getThumb());
         helper.setText(R.id.tv_fans, model.getUsers() + "");
         if (model.getUsers() == 0) {
             helper.setText(R.id.tv_fans, model.getFans() + "");

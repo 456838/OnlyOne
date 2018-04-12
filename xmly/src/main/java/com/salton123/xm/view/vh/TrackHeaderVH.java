@@ -4,7 +4,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
-import com.salton123.common.image.FrescoImageLoader;
+import com.salton123.onlyonebase.FrescoImageLoader;
 import com.salton123.xm.R;
 import com.salton123.xm.util.ViewUtils;
 import com.ximalaya.ting.android.opensdk.model.track.TrackList;
@@ -34,7 +34,7 @@ public class TrackHeaderVH extends BaseVH {
             tv_album_id = ViewUtils.f(itemView, R.id.tv_album_id);
             tv_total_count = ViewUtils.f(itemView, R.id.tv_total_count);
             tv_album_intro = ViewUtils.f(itemView, R.id.tv_album_intro);
-            FrescoImageLoader.display(sdv_cover_url, model.getCoverUrlLarge());
+            FrescoImageLoader.Companion.display(sdv_cover_url, model.getCoverUrlLarge());
             tv_album_title.setText(model.getAlbumTitle());
             tv_album_id.setText("id:" + model.getAlbumId());
             tv_total_count.setText("总数:" + model.getTotalCount());
