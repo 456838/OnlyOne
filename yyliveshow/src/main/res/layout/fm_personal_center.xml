@@ -90,7 +90,7 @@
                 android:background="@drawable/btn_list_item_bg"
                 android:clickable="true">
 
-                <com.facebook.drawee.view.SimpleDraweeView
+                <com.yy.mobile.memoryrecycle.views.YYImageView
                     android:id="@+id/sdv_thumbnail"
                     android:layout_width="75dp"
                     android:layout_height="75dp"
@@ -102,9 +102,7 @@
                     android:layout_marginTop="@dimen/ww_room_seat_hat_margintop"
                     android:scaleType="centerCrop"
                     android:src="@drawable/ww_room_empty_seat"
-                    fresco:failureImage="@drawable/yy_bear_logo"
-                    fresco:placeholderImage="@drawable/yy_bear_logo"
-                    fresco:roundAsCircle="true" />
+                  />
 
                 <TextView
                     android:id="@+id/tv_nickname"

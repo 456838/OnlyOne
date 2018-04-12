@@ -2,9 +2,8 @@ package com.salton123.xm.fm;
 
 import android.os.Bundle;
 
-import com.salton123.mvp.ui.BaseSupportPresenterFragment;
+import com.salton123.base.BaseSupportFragment;
 import com.salton123.xm.R;
-import com.salton123.xm.business.OneToNContract;
 
 /**
  * User: newSalton@outlook.com
@@ -12,7 +11,7 @@ import com.salton123.xm.business.OneToNContract;
  * ModifyTime: 21:27
  * Description:
  */
-public class TingShuFragment extends BaseSupportPresenterFragment<OneToNContract.Presenter> implements OneToNContract.TingShuIView {
+public class TingShuFragment extends BaseSupportFragment {
 
     @Override
     public int GetLayout() {
@@ -21,6 +20,7 @@ public class TingShuFragment extends BaseSupportPresenterFragment<OneToNContract
 
     @Override
     public void InitVariable(Bundle savedInstanceState) {
+
 
     }
 

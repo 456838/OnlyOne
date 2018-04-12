@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    xmlns:fresco="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cv_vertical_with_click_info"
     android:layout_width="match_parent"
@@ -16,13 +14,13 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <com.facebook.drawee.view.SimpleDraweeView
+        <ImageView
             android:id="@+id/iv_thumbnail"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:layout_gravity="center"
             android:scaleType="centerInside"
-            android:src="@drawable/salton_load_pic"/>
+            android:src="@drawable/salton_load_pic" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -39,7 +37,7 @@
                 android:singleLine="true"
                 android:textColor="@color/font_light"
                 android:textSize="12sp"
-                tools:text="标题标题标题标题标题标题"/>
+                tools:text="标题标题标题标题标题标题" />
 
             <TextView
                 android:id="@+id/tv_fans"
@@ -50,7 +48,7 @@
                 android:gravity="center_vertical|right"
                 android:singleLine="true"
                 android:textSize="10sp"
-                tools:text="频道号"/>
+                tools:text="频道号" />
         </LinearLayout>
 
         <LinearLayout
@@ -70,7 +68,7 @@
                 android:gravity="center_vertical"
                 android:singleLine="true"
                 android:textSize="10sp"
-                tools:text="剧本类型"/>
+                tools:text="剧本类型" />
 
             <TextView
                 android:id="@+id/tv_reply_count"
@@ -82,7 +80,7 @@
                 android:gravity="center_vertical|right"
                 android:singleLine="true"
                 android:textSize="10sp"
-                tools:text="人数"/>
+                tools:text="人数" />
 
         </LinearLayout>
 

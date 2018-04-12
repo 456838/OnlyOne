@@ -20,14 +20,14 @@
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
-        <com.facebook.drawee.view.SimpleDraweeView
+        <com.yy.mobile.memoryrecycle.views.YYImageView
             android:id="@+id/mini_player_image"
             android:layout_width="44dp"
             android:layout_height="44dp"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="8dp"
             android:scaleType="centerCrop"
-            fresco:placeholderImage="@drawable/default_record_album"
+            android:src="@drawable/default_record_album"
             tools:ignore="ContentDescription" />
 
         <LinearLayout

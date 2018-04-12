@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:fresco="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -20,8 +19,8 @@
             android:layout_width="260dp"
             android:layout_height="260dp"
             android:layout_centerInParent="true"
-            fresco:placeholderImage="@drawable/default_record_album"
-            fresco:roundAsCircle="true" />
+            android:background="@drawable/default_record_album"
+            />
     </RelativeLayout>
 
     <TextView
@@ -33,7 +32,8 @@
         android:layout_marginRight="24dp"
         android:gravity="center"
         android:textColor="?attr/colorAccent"
-        android:textSize="18sp"
+        android:textSize="16sp"
+        android:lines="1"
         tools:text="Drag me down" />
 
     <TextView
@@ -44,7 +44,8 @@
         android:layout_marginRight="24dp"
         android:gravity="center"
         android:textColor="?attr/colorAccent"
-        android:textSize="14sp"
+        android:textSize="12sp"
+        android:lines="2"
         tools:text="One Direction" />
 
     <LinearLayout

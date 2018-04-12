@@ -20,7 +20,7 @@
             android:src="@drawable/ww_seat_decorate"
             android:visibility="gone" />
 
-        <com.facebook.drawee.view.SimpleDraweeView
+        <com.yy.mobile.memoryrecycle.views.YYImageView
             android:id="@+id/sdv_actor_header"
             android:layout_width="63dp"
             android:layout_height="63dp"
@@ -28,9 +28,7 @@
             android:layout_marginTop="@dimen/ww_room_seat_hat_margintop"
             android:scaleType="centerCrop"
             android:src="@drawable/ww_room_empty_seat"
-            fresco:failureImage="@drawable/yy_bear_logo"
-            fresco:placeholderImage="@drawable/yy_bear_logo"
-            fresco:roundAsCircle="true" />
+          />
 
         <ImageView
             android:id="@+id/seat_decorate"

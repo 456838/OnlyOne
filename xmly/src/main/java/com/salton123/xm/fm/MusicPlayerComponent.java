@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-import com.salton123.onlyonebase.FrescoImageLoader;
+import com.salton123.onlyonebase.ImageLoader;
 import com.salton123.onlyonebase.view.widget.ShadowImageView;
 import com.salton123.xm.R;
 import com.salton123.xm.business.MusicPlayerContract;
@@ -55,7 +55,7 @@ public class MusicPlayerComponent extends BaseMusicPlayerComponent implements Mu
     public void onTrack(Track track) {
         super.onTrack(track);
         image_view_album.startRotateAnimation();
-        FrescoImageLoader.Companion.display(image_view_album, track.getCoverUrlLarge());
+        ImageLoader.Companion.displayCircle(image_view_album, track.getCoverUrlLarge());
         seek_bar.setMax(XmlyInitializer.getInstance().getPlayerManager().getDuration());
         mTracks = XmlyInitializer.getInstance().getPlayerManager().getPlayList();
     }

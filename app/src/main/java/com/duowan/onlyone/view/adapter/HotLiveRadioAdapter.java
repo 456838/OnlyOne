@@ -1,11 +1,11 @@
 package com.duowan.onlyone.view.adapter;
 
 import android.support.v7.widget.RecyclerView;
+import android.widget.ImageView;
 
 import com.duowan.onlyone.R;
 import com.duowan.onlyone.model.entity.YYHomeIndex;
-import com.facebook.drawee.view.SimpleDraweeView;
-import com.salton123.onlyonebase.FrescoImageLoader;
+import com.salton123.onlyonebase.ImageLoader;
 
 import cn.bingoogolapple.baseadapter.BGARecyclerViewAdapter;
 import cn.bingoogolapple.baseadapter.BGAViewHolderHelper;
@@ -25,9 +25,9 @@ public class HotLiveRadioAdapter extends BGARecyclerViewAdapter<YYHomeIndex.Data
     protected void fillData(BGAViewHolderHelper helper, int position, YYHomeIndex.DataBeanX.DataBean model) {
 //        ImageView living_thumb_asr  = helper.getImageView(R.id.iv_thumbnail);
 //        ImageLoaderUtils.display(living_thumb_asr,model.getThumb());
-        SimpleDraweeView iv_thumbnail = helper.getView(R.id.iv_thumbnail);
+        ImageView iv_thumbnail = helper.getImageView(R.id.iv_thumbnail);
 
-        FrescoImageLoader.Companion.display(iv_thumbnail, model.getThumb());
+        ImageLoader.Companion.display(iv_thumbnail, model.getThumb());
         helper.setText(R.id.tv_fans, model.getUsers() + "");
         if (model.getUsers() == 0) {
             helper.setText(R.id.tv_fans, model.getFans() + "");

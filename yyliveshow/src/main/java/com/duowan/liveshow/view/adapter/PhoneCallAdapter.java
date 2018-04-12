@@ -27,7 +27,7 @@ public class PhoneCallAdapter extends BGARecyclerViewAdapter<MicTopInfo> {
     protected void fillData(BGAViewHolderHelper helper, int position, MicTopInfo model) {
         SimpleDraweeView sdv_actor_header = helper.getView(R.id.sdv_actor_header);
         helper.setText(R.id.tv_actor_name, model.name);
-        FrescoImageLoader.display(sdv_actor_header, model.portraitUrl);
+        FrescoImageLoader.displayCircle(sdv_actor_header, model.portraitUrl);
         View view_speak_status = helper.getView(R.id.iv_speaker_off);
         if (getItem(position).isSpeaking) {//正在说话
             view_speak_status.setBackgroundResource(R.drawable.shape_circle_green);

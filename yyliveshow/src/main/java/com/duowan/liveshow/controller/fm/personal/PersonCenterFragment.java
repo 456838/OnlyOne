@@ -133,7 +133,7 @@ public class PersonCenterFragment extends BaseSupportFragment implements View.On
 
     private void updateUserInfoUI(LoginUserInfo mUser) {
         if (mUser != null) {
-            FrescoImageLoader.display(sdv_thumbnail, mUser.iconUrl);
+            FrescoImageLoader.displayCircle(sdv_thumbnail, mUser.iconUrl);
             tv_nickname.setText("" + mUser.nickName);
             tv_id.setText("" + mUser.yyId);
             tv_signature.setText("" + mUser.signature);

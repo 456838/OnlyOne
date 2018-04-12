@@ -80,6 +80,7 @@ public class IndexFragment extends BaseSupportPresenterFragment<OneToNContract.P
         }
         loadRootFragment(R.id.music_player_container, musicPlayerComponent);
         loadRootFragment(R.id.mini_player_container, miniPlayerComponent);
+
     }
 
     @Override

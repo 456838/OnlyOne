@@ -10,7 +10,7 @@ import android.widget.TextView;
 import com.duowan.liveshow.R;
 import com.salton123.base.AdapterBase;
 import com.salton123.base.ViewHolder;
-import com.salton123.onlyonebase.FrescoImageLoader;
+import com.salton123.onlyonebase.ImageLoader;
 import com.salton123.util.ScreenUtils;
 import com.yy.live.model.bean.channel.micinfo.MicTopInfo;
 
@@ -48,7 +48,7 @@ public class PhoneCallListAdapter extends AdapterBase<MicTopInfo> {
         int screenWidth = ScreenUtils.getScreenWidth(p_ImageView.getContext());
         int screenHeight = ScreenUtils.getScreenHeight(p_ImageView.getContext());
         if (!TextUtils.isEmpty(p_Uri)) {
-            FrescoImageLoader.Companion.display(p_ImageView, p_Uri);
+            ImageLoader.Companion.display(p_ImageView, p_Uri);
 
         } else {
             p_ImageView.setImageResource(R.drawable.yy_bear_logo);

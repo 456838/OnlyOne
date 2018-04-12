@@ -12,9 +12,8 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.facebook.drawee.view.SimpleDraweeView;
 import com.salton123.mvp.ui.BaseSupportPresenterFragment;
-import com.salton123.onlyonebase.FrescoImageLoader;
+import com.salton123.onlyonebase.ImageLoader;
 import com.salton123.util.EventUtil;
 import com.salton123.xm.R;
 import com.salton123.xm.business.OneToNContract;
@@ -29,6 +28,7 @@ import com.ximalaya.ting.android.opensdk.player.XmPlayerManager;
 import com.ximalaya.ting.android.sdkdownloader.XmDownloadManager;
 import com.ximalaya.ting.android.sdkdownloader.downloadutil.IDoSomethingProgress;
 import com.ximalaya.ting.android.sdkdownloader.exception.AddDownloadException;
+import com.yy.mobile.memoryrecycle.views.YYImageView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,7 +59,7 @@ public class TracksFragment extends BaseSupportPresenterFragment<OneToNContract.
         T fragment = null;
 
         try {
-            fragment =clz.newInstance();
+            fragment = clz.newInstance();
         } catch (Exception var5) {
             var5.printStackTrace();
         }
@@ -79,14 +79,14 @@ public class TracksFragment extends BaseSupportPresenterFragment<OneToNContract.
 
     @Override
     public void InitVariable(Bundle savedInstanceState) {
-        if (getArguments().getParcelable(ARG_ITEM) instanceof  Album){
+        if (getArguments().getParcelable(ARG_ITEM) instanceof Album) {
             Album mAlbum;
             mAlbum = getArguments().getParcelable(ARG_ITEM);
-            if(mAlbum!=null){
+            if (mAlbum != null) {
                 album_id = mAlbum.getId();
             }
-        }else if(getArguments().getLong(ARG_ITEM)>0){
-            album_id= getArguments().getLong(ARG_ITEM);
+        } else if (getArguments().getLong(ARG_ITEM) > 0) {
+            album_id = getArguments().getLong(ARG_ITEM);
         }
         mPresenter = new OneToNPresenter();
 //        mPlayerManager = XmPlayerManager.getInstance(_mActivity);
@@ -96,7 +96,7 @@ public class TracksFragment extends BaseSupportPresenterFragment<OneToNContract.
 
     public static <T extends Fragment> T newInstance(Class<T> clz, @Nullable ArrayList<? extends Parcelable> value) {
         Bundle bundle = new Bundle();
-        bundle.putParcelableArrayList(ARG_ITEM,value);
+        bundle.putParcelableArrayList(ARG_ITEM, value);
         T fragment = null;
         try {
             fragment = clz.newInstance();
@@ -183,9 +183,9 @@ public class TracksFragment extends BaseSupportPresenterFragment<OneToNContract.
         });
     }
 
-    private void updateItemStatus(View itemView,int position) {
+    private void updateItemStatus(View itemView, int position) {
 //        int pos =XmPlayerManager.getInstance(_mActivity).getCurrentIndex();
-        mAdapter.loadRotateAnimation(itemView,true);
+        mAdapter.loadRotateAnimation(itemView, true);
 //        BGAViewHolderHelper holder =recycler.findViewHolderForAdapterPosition(position);
 
 //        mAdapter.loadRotateAnimation(holder.getItemViewType().findViewById(R.id.iv_play_music));
@@ -204,7 +204,9 @@ public class TracksFragment extends BaseSupportPresenterFragment<OneToNContract.
 
     @Override
     public void showTracks(TrackList list) {
-        if (list.getTracks().size() < pageSize) toast("数据加载完毕");
+        if (list.getTracks().size() < pageSize) {
+            toast("数据加载完毕");
+        }
         if (refresh.isRefreshing()) {
             refresh.setRefreshing(false);
 //            page = 1;
@@ -223,10 +225,10 @@ public class TracksFragment extends BaseSupportPresenterFragment<OneToNContract.
 
 
     private void initHeaderData(TrackList list) {
-        SimpleDraweeView sdv_thumbnail = (SimpleDraweeView) ll_track_intro.findViewById(R.id.sdv_thumbnail);
+        YYImageView sdv_thumbnail = ll_track_intro.findViewById(R.id.sdv_thumbnail);
         TextView tv_title = (TextView) ll_track_intro.findViewById(R.id.title);
         TextView tv_expandable = (TextView) ll_track_intro.findViewById(R.id.expandable_text);
-        FrescoImageLoader.Companion.display(sdv_thumbnail, list.getCoverUrlLarge());
+        ImageLoader.Companion.display(sdv_thumbnail, list.getCoverUrlLarge());
         if (StringUtil.isBlank(list.getAlbumTitle())) {
             tv_title.setVisibility(View.GONE);
         }
@@ -237,8 +239,6 @@ public class TracksFragment extends BaseSupportPresenterFragment<OneToNContract.
         String intro = list.getAlbumIntro();
         tv_expandable.setText(intro == null ? "" : intro);
     }
-
-
 
 
     @Override

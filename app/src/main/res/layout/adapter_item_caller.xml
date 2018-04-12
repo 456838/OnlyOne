@@ -6,7 +6,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
-    <com.facebook.drawee.view.SimpleDraweeView
+    <com.yy.mobile.memoryrecycle.views.YYImageView
         android:id="@+id/sdv_actor_header"
         android:layout_width="50.0dip"
         android:layout_height="50.0dip"
@@ -14,9 +14,6 @@
         android:layout_margin="3dp"
         android:scaleType="centerCrop"
         android:src="@drawable/chat_room_seat_empty"
-        fresco:roundAsCircle="true"
-        fresco:placeholderImage="@drawable/salton_load_pic"
-        fresco:failureImage="@drawable/salton_load_pic_failed"
         />
 
     <ImageView

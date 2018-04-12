@@ -8,8 +8,7 @@ import com.duowan.onlyone.R;
 import com.duowan.onlyone.model.entity.kaiyan.DataBean;
 import com.duowan.onlyone.model.entity.kaiyan.ItemListBean;
 import com.duowan.onlyone.model.entity.utils.DateUtil;
-import com.facebook.drawee.view.SimpleDraweeView;
-import com.salton123.onlyonebase.FrescoImageLoader;
+import com.salton123.onlyonebase.ImageLoader;
 
 import cn.bingoogolapple.baseadapter.BGARecyclerViewAdapter;
 import cn.bingoogolapple.baseadapter.BGAViewHolderHelper;
@@ -38,7 +37,7 @@ public class VideoAdapter extends BGARecyclerViewAdapter<ItemListBean> {
         if (getItem(position).getType().equals("video")) {
             DataBean dataBean = model.getData();
             if (dataBean != null) {
-                FrescoImageLoader.Companion.display((SimpleDraweeView) helper.getView(R.id.img), dataBean.getCover() != null ? dataBean.getCover().getDetail() : "");
+                ImageLoader.Companion.display(helper.getImageView(R.id.img), dataBean.getCover() != null ? dataBean.getCover().getDetail() : "");
                 helper.setText(R.id.title, model.getData().getTitle());
                 StringBuilder stringBuilder = new StringBuilder();
                 stringBuilder.append("#").append(dataBean.getCategory())
