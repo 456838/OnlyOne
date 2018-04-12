@@ -49,6 +49,7 @@ dependencies {
     compile project(":onlyonebase")
     compile 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.4@aar'
     compile project(path: ':xmly')
+//    compile project(path: ':yyliveshow')
     compile 'com.github.xiaoyanger0825:NiceVieoPlayer:v2.2'
     compile 'cn.bingoogolapple:bga-refreshlayout:1.1.8@aar'
 }

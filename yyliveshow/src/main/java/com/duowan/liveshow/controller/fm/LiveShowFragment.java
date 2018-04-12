@@ -8,7 +8,7 @@ import com.duowan.liveshow.R;
 import com.duowan.liveshow.controller.ChannelVideoController;
 import com.duowan.liveshow.view.widget.DoubleLayout;
 import com.duowan.mobile.mediaproxy.YVideoViewLayout;
-import com.salton123.base.BaseSupportSwipeBackFragment;
+import com.salton123.base.BaseSupportFragment;
 import com.salton123.util.ScreenRotationUtils;
 import com.yy.live.model.engine.YYEngine;
 import com.yy.live.model.proxy.MediaProxy;
@@ -20,10 +20,10 @@ import com.yyproto.base.YYSdkService;
  * Time: 10:42
  * Description:
  */
-public class LiveShowFragment extends BaseSupportSwipeBackFragment {
+public class LiveShowFragment extends BaseSupportFragment {
     YVideoViewLayout yvLayout, yvLayout2;
     DoubleLayout double_layout;
-    private FloatingActionButton btn_change_orientation ;
+    private FloatingActionButton btn_change_orientation;
 
     ChannelVideoController mChannelVideoController;
 
@@ -59,23 +59,23 @@ public class LiveShowFragment extends BaseSupportSwipeBackFragment {
         btn_change_orientation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (portraitFlag){
+                if (portraitFlag) {
                     ScreenRotationUtils.setScreenLandscape(_mActivity);
-                }else{
+                } else {
                     ScreenRotationUtils.setScreenPortrait(_mActivity);
                 }
-                portraitFlag =!portraitFlag;
+                portraitFlag = !portraitFlag;
             }
         });
     }
 
-    private boolean portraitFlag ;
+    private boolean portraitFlag;
 
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        if (!portraitFlag){
+        if (!portraitFlag) {
             ScreenRotationUtils.setScreenPortrait(_mActivity);
         }
 

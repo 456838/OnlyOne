@@ -2,14 +2,14 @@ package com.duowan.liveshow.view.adapter;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.ImageView;
 
 import com.duowan.liveshow.R;
-import com.facebook.drawee.view.SimpleDraweeView;
-import com.salton123.common.image.FrescoImageLoader;
+import com.salton123.onlyonebase.ImageLoader;
 import com.yy.live.model.bean.channel.micinfo.MicTopInfo;
 
-import cn.bingoogolapple.androidcommon.adapter.BGARecyclerViewAdapter;
-import cn.bingoogolapple.androidcommon.adapter.BGAViewHolderHelper;
+import cn.bingoogolapple.baseadapter.BGARecyclerViewAdapter;
+import cn.bingoogolapple.baseadapter.BGAViewHolderHelper;
 
 /**
  * User: 巫金生(newSalton@outlook.com)
@@ -25,9 +25,9 @@ public class PhoneCallAdapter extends BGARecyclerViewAdapter<MicTopInfo> {
 
     @Override
     protected void fillData(BGAViewHolderHelper helper, int position, MicTopInfo model) {
-        SimpleDraweeView sdv_actor_header = helper.getView(R.id.sdv_actor_header);
+        ImageView sdv_actor_header = helper.getView(R.id.sdv_actor_header);
         helper.setText(R.id.tv_actor_name, model.name);
-        FrescoImageLoader.displayCircle(sdv_actor_header, model.portraitUrl);
+        ImageLoader.Companion.displayCircle(sdv_actor_header, model.portraitUrl);
         View view_speak_status = helper.getView(R.id.iv_speaker_off);
         if (getItem(position).isSpeaking) {//正在说话
             view_speak_status.setBackgroundResource(R.drawable.shape_circle_green);

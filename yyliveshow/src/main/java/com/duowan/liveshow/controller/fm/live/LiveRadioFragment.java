@@ -14,17 +14,23 @@ import android.widget.TextView;
 
 import com.duowan.liveshow.LiveShowApi;
 import com.duowan.liveshow.R;
+import com.duowan.liveshow.controller.fm.LiveShowHolderFragment;
 import com.duowan.liveshow.entity.YYHomeIndex;
 import com.duowan.liveshow.utils.BGAUtil;
 import com.duowan.liveshow.view.adapter.HotLiveRadioAdapter;
 import com.salton123.base.BaseSupportFragment;
+import com.salton123.event.StartBrotherEvent;
 import com.salton123.mvp.util.RxUtil;
 import com.salton123.onlyonebase.view.widget.Divider;
+import com.yy.live.model.bean.core.ChannelInfo;
+import com.yy.live.model.proxy.MediaProxy;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.util.LinkedList;
 import java.util.List;
 
-import cn.bingoogolapple.androidcommon.adapter.BGAOnRVItemClickListener;
+import cn.bingoogolapple.baseadapter.BGAOnRVItemClickListener;
 import cn.bingoogolapple.refreshlayout.BGARefreshLayout;
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
@@ -44,7 +50,7 @@ public class LiveRadioFragment extends BaseSupportFragment implements BGAOnRVIte
     RelativeLayout rl_live_top, rl_top_title;
     HotLiveRadioAdapter mAdapter;
     EditText et_input_search;
-    // MediaProxy mMediaImpl = MediaProxy.getInstance();
+    MediaProxy mMediaImpl = MediaProxy.getInstance();
 
     @Override
     public int GetLayout() {
@@ -82,10 +88,10 @@ public class LiveRadioFragment extends BaseSupportFragment implements BGAOnRVIte
                 if (actionId == EditorInfo.IME_ACTION_SEARCH) {
                     String inputContent = et_input_search.getText().toString().trim();
 
-                    // ChannelInfo channelInfo = new ChannelInfo();
-                    // channelInfo.topSid = Long.parseLong(inputContent);
-                    // mMediaImpl.currentChannelInfo = channelInfo;
-                    // EventBus.getDefault().post(new StartBrotherEvent(BaseSupportFragment.newInstance(LiveShowHolderFragment.class)));
+                    ChannelInfo channelInfo = new ChannelInfo();
+                    channelInfo.topSid = Long.parseLong(inputContent);
+                    mMediaImpl.currentChannelInfo = channelInfo;
+                    EventBus.getDefault().post(new StartBrotherEvent(BaseSupportFragment.newInstance(LiveShowHolderFragment.class)));
                 }
                 return false;
             }
@@ -98,11 +104,11 @@ public class LiveRadioFragment extends BaseSupportFragment implements BGAOnRVIte
     public void onRVItemClick(ViewGroup parent, View itemView, int position) {
         Bundle bundle = new Bundle();
         YYHomeIndex.DataBeanX.DataBean dataBean = mAdapter.getItem(position);
-        // ChannelInfo channelInfo = new ChannelInfo();
-        // channelInfo.topSid = dataBean.getSid();
-        // channelInfo.subSid = dataBean.getSsid();
-        // mMediaImpl.currentChannelInfo = channelInfo;
-        // EventBus.getDefault().post(new StartBrotherEvent(BaseSupportFragment.newInstance(LiveShowHolderFragment.class)));
+        ChannelInfo channelInfo = new ChannelInfo();
+        channelInfo.topSid = dataBean.getSid();
+        channelInfo.subSid = dataBean.getSsid();
+        mMediaImpl.currentChannelInfo = channelInfo;
+        EventBus.getDefault().post(new StartBrotherEvent(BaseSupportFragment.newInstance(LiveShowHolderFragment.class)));
     }
 
     @Override

@@ -20,7 +20,7 @@ import com.yy.live.model.bean.channel.micinfo.MicTopInfo;
 import java.util.ArrayList;
 import java.util.List;
 
-import cn.bingoogolapple.androidcommon.adapter.BGAOnRVItemClickListener;
+import cn.bingoogolapple.baseadapter.BGAOnRVItemClickListener;
 
 
 /**
@@ -37,6 +37,7 @@ public class PhoneCallFragment extends BaseSupportFragment {
     public int GetLayout() {
         return R.layout.fm_phone_call;
     }
+
     @Override
     public void InitVariable(Bundle savedInstanceState) {
         CoreManager.addClient(this);

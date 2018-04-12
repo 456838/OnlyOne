@@ -5,12 +5,12 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.duowan.liveshow.R;
-import com.facebook.drawee.view.SimpleDraweeView;
 import com.salton123.base.BaseSupportFragment;
-import com.salton123.common.image.FrescoImageLoader;
+import com.salton123.onlyonebase.ImageLoader;
 import com.salton123.util.LogUtils;
 import com.salton123.util.PreferencesUtils;
 import com.yy.live.core.CoreManager;
@@ -30,7 +30,7 @@ import com.yy.udbauth.ui.tools.OpreateType;
  * Description:
  */
 public class PersonCenterFragment extends BaseSupportFragment implements View.OnClickListener {
-    private SimpleDraweeView sdv_thumbnail;
+    private ImageView sdv_thumbnail;
     private TextView tv_signature;
     private TextView tv_nickname;
     private TextView tv_id;
@@ -133,7 +133,7 @@ public class PersonCenterFragment extends BaseSupportFragment implements View.On
 
     private void updateUserInfoUI(LoginUserInfo mUser) {
         if (mUser != null) {
-            FrescoImageLoader.displayCircle(sdv_thumbnail, mUser.iconUrl);
+            ImageLoader.Companion.displayCircle(sdv_thumbnail, mUser.iconUrl);
             tv_nickname.setText("" + mUser.nickName);
             tv_id.setText("" + mUser.yyId);
             tv_signature.setText("" + mUser.signature);

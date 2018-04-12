@@ -37,6 +37,9 @@ public class FourthFragment extends BaseHomeFragment {
     @Override
     public void onLazyInitView(@Nullable Bundle savedInstanceState) {
         super.onLazyInitView(savedInstanceState);
+        if (savedInstanceState == null) {
+            // loadRootFragment(R.id.fl_container, BaseSupportFragment.newInstance(LiveShowFragment.class));
+        }
 //        if (findChildFragment(AvatarFragment.class) == null) {
 //            loadFragment();
 //        }
@@ -67,12 +70,5 @@ public class FourthFragment extends BaseHomeFragment {
 //
 //    }
 //
-//    @Override
-//    public void onLazyInitView(@Nullable Bundle savedInstanceState) {
-//        super.onLazyInitView(savedInstanceState);
-//        if (savedInstanceState == null) {
-////            loadRootFragment(R.id.fl_container, BaseSupportFragment.newInstance(PersonCenterFragment.class));
-//            loadRootFragment(R.id.fl_container, AvatarFragment.newInstance());
-//        }
-//    }
+
 }

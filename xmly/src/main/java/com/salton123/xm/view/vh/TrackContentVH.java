@@ -4,8 +4,8 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.salton123.util.SizeUtils;
+import com.salton123.util.ViewUtils;
 import com.salton123.xm.R;
-import com.salton123.xm.util.ViewUtils;
 import com.salton123.xm.wrapper.TrackUtil;
 import com.ximalaya.ting.android.opensdk.model.track.Track;
 

@@ -3,19 +3,16 @@ package com.yy.live.model.bean;
 
 import com.yy.live.model.UserInfo;
 
-import org.xutils.db.annotation.Column;
-import org.xutils.db.annotation.Table;
-
 /**
  * User: 巫金生(newSalton@outlook.com)
  * Date: 2017/4/16
  * Time: 18:56
  * Description: 登录用户信息类
  */
-@Table(name = "LoginUserInfo")
+// @Table(name = "LoginUserInfo")
 public class LoginUserInfo extends UserInfo {
 
-    @Column(name = "lastLoginTime")
+    // @Column(name = "lastLoginTime")
     public long lastLoginTime; // 用最后登录的时间作为自动登录的账号
 
 

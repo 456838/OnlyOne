@@ -33,4 +33,5 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile project(':yylive')
+    compile 'cn.bingoogolapple:bga-refreshlayout:1.1.8@aar'
 }

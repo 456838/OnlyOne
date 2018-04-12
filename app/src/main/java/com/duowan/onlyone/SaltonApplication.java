@@ -36,6 +36,7 @@ public class SaltonApplication extends ApplicationBase {
                 })
                 .install();
         GSYImageLoaderManager.Companion.initialize(new GSYGlideImageLoader(this));
+        // YYEngine.getInstance().init();
     }
 
     public void sayHello() {
