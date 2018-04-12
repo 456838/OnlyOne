@@ -34,7 +34,7 @@ import static com.ximalaya.ting.android.opensdk.player.service.XmPlayListControl
 public class MusicPlayerComponent extends BaseMusicPlayerComponent implements MusicPlayerContract.IView {
     private ShadowImageView image_view_album;
     private TextView text_view_progress, text_view_duration;
-    private AppCompatSeekBar seek_bar;
+    private SeekBar seek_bar;
     private AppCompatImageView button_play_last, button_play_next, button_play_mode_toggle;
 
     @Override

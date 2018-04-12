@@ -21,6 +21,17 @@ allprojects {
         maven { url 'http://repo.yypm.com:8181/nexus/content/repositories/snapshots' }
         maven { url "https://jitpack.io" }
     }
+    configurations.all {
+        resolutionStrategy {
+            force "com.android.support:support-v4:${support_version}"
+            force "com.android.support:support-annotations:${support_version}"
+            force "com.android.support:appcompat-v7:${support_version}"
+            force "com.android.support:design:${support_version}"
+            force "com.android.support:recyclerview-v7:${support_version}"
+            force "com.android.support:cardview-v7:${support_version}"
+            force "com.android.support:design:${support_version}"
+        }
+    }
 }
 
 task clean(type: Delete) {

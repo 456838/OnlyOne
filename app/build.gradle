@@ -23,36 +23,25 @@ android {
         }
     }
 
-    signingConfigs {
-        release {
-            //配置签名密钥的alias，pwd，path
-            keyAlias 'newsalton'
-            keyPassword 'newsalton'
-            storeFile file('keystore/newsalton.jks')
-            storePassword 'newsalton'
-        }
-
-        debug {
-            //配置签名密钥的alias，pwd，path
-            keyAlias 'newsalton'
-            keyPassword 'newsalton'
-            storeFile file('keystore/newsalton.jks')
-            storePassword 'newsalton'
-        }
-    }
+//    signingConfigs {
+//        release {
+//            //配置签名密钥的alias，pwd，path
+//            keyAlias 'newsalton'
+//            keyPassword 'newsalton'
+//            storeFile file('keystore/newsalton.jks')
+//            storePassword 'newsalton'
+//        }
+//
+//        debug {
+//            //配置签名密钥的alias，pwd，path
+//            keyAlias 'newsalton'
+//            keyPassword 'newsalton'
+//            storeFile file('keystore/newsalton.jks')
+//            storePassword 'newsalton'
+//        }
+//    }
 }
 
-configurations.all {
-    resolutionStrategy {
-        force "com.android.support:support-v4:${support_version}"
-        force "com.android.support:support-annotations:${support_version}"
-        force "com.android.support:appcompat-v7:${support_version}"
-        force "com.android.support:design:${support_version}"
-        force "com.android.support:recyclerview-v7:${support_version}"
-        force "com.android.support:cardview-v7:${support_version}"
-        force "com.android.support:design:${support_version}"
-    }
-}
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')

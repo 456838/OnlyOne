@@ -14,6 +14,7 @@ import com.duowan.onlyone.model.entity.VideoListBean;
 import com.duowan.onlyone.model.entity.kaiyan.ItemListBean;
 import com.duowan.onlyone.view.adapter.VideoAdapter;
 import com.duowan.onlyone.view.callback.EndLessOnScrollListener;
+
 import com.salton123.event.StartBrotherEvent;
 import com.salton123.mvp.ui.BaseSupportPresenterFragment;
 import com.salton123.onlyonebase.view.widget.StatusTitleBar;

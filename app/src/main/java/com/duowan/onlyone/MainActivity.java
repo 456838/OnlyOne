@@ -12,6 +12,7 @@ import com.duowan.onlyone.fm.MainFragment;
 import com.salton123.base.BaseSupportActivity;
 import com.salton123.base.BaseSupportFragment;
 import com.salton123.util.LogUtils;
+import com.salton123.util.log.MLog;
 import com.salton123.xm.wrap.XmlyInitializer;
 import com.salton123.xm.wrapper.XmAdsStatusAdapter;
 import com.salton123.xm.wrapper.XmPlayerStatusAdapter;
@@ -29,6 +30,8 @@ import io.reactivex.functions.Consumer;
  * Description:
  */
 public class MainActivity extends BaseSupportActivity {
+    private static final String TAG = "MainActivity";
+
     @Override
     public int GetLayout() {
         return R.layout.fm_container;
@@ -100,7 +103,7 @@ public class MainActivity extends BaseSupportActivity {
     public void initXm() {
         if (BaseUtil.isMainProcess(this)) {
             // SaltonApplication.<SaltonApplication>getInstance().sayHello();
-
+            MLog.info(TAG, "init Xm");
             XmlyInitializer.getInstance().attch(SaltonApplication.getInstance()).defaultDownloadManager().notify(MainActivity.class, iXmPlayerStatusListener, iXmAdsStatusListener).businessHandle().init();
         }
     }
