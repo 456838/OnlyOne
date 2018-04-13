@@ -10,7 +10,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <include layout="@layout/video_home_detail_fragment" />
+        <!--<include layout="@layout/video_home_detail_fragment" />-->
+
+        <com.xiao.nicevideoplayer.NiceVideoPlayer
+            android:id="@+id/videoplayer"
+            android:layout_width="match_parent"
+            android:layout_height="300dp" />
+
 
         <com.salton123.onlyonebase.view.verticalswitch.SmallVideoTouchInterceptRelativeLayout
             android:id="@+id/vertical_switch_layout"

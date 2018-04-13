@@ -4,8 +4,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-
-
     <com.yy.mobile.memoryrecycle.views.YYImageView
         android:id="@+id/imgVideoSnapshot"
         android:layout_width="match_parent"

@@ -5,6 +5,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
 
@@ -20,6 +21,8 @@ import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.ximalaya.ting.android.opensdk.player.advertis.IXmAdsStatusListener;
 import com.ximalaya.ting.android.opensdk.player.service.IXmPlayerStatusListener;
 import com.ximalaya.ting.android.opensdk.util.BaseUtil;
+
+import java.util.ArrayList;
 
 import io.reactivex.functions.Consumer;
 
@@ -107,4 +110,38 @@ public class MainActivity extends BaseSupportActivity {
             XmlyInitializer.getInstance().attch(SaltonApplication.getInstance()).defaultDownloadManager().notify(MainActivity.class, iXmPlayerStatusListener, iXmAdsStatusListener).businessHandle().init();
         }
     }
+
+    /** 保存MyTouchListener接口的列表 */
+    private ArrayList<MyTouchListener> myTouchListeners = new ArrayList<>();
+
+    /** 提供给Fragment通过getActivity()方法来注册自己的触摸事件的方法 */
+    public void registerMyTouchListener(MyTouchListener listener) {
+        myTouchListeners.add(listener);
+    }
+
+    /** 提供给Fragment通过getActivity()方法来取消注册自己的触摸事件的方法 */
+    public void unRegisterMyTouchListener(MyTouchListener listener) {
+        myTouchListeners.remove( listener );
+    }
+
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        for (MyTouchListener listener : myTouchListeners) {
+            listener.onTouchEvent(ev);
+        }
+        return super.dispatchTouchEvent(ev);
+    }
+    public interface MyTouchListener {
+        /** onTOuchEvent的实现 */
+        boolean onTouchEvent(MotionEvent event);
+    }
+
+
+    // public void dispatchTouchEvent(ev:MotionEvent):Boolean
+    //
+    // {
+    //     mSwitchManager.onDispatchTouchEvent(ev)
+    //     return super.dispatchTouchEvent(ev)
+    // }
 }

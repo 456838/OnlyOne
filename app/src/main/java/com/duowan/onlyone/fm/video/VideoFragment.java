@@ -63,7 +63,7 @@ public class VideoFragment extends BaseSupportPresenterFragment<VideoFragmentPre
                 Bundle bundle = new Bundle();
                 bundle.putParcelableArrayList(ARG_ITEM, (ArrayList<? extends Parcelable>) mAdapter.getData());
                 bundle.putInt("position", position);
-                EventBus.getDefault().post(new StartBrotherEvent(VideoDetailComponent.Companion.newInstance(bundle)));
+                EventBus.getDefault().post(new StartBrotherEvent(SmallVideoPlayComponent.newInstance(bundle)));
             }
         });
         recycler.addOnScrollListener(new EndLessOnScrollListener(mLinearLayoutManager, 0) {

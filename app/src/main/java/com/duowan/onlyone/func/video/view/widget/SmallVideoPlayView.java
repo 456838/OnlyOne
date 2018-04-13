@@ -6,7 +6,8 @@ import android.view.LayoutInflater;
 import android.widget.RelativeLayout;
 
 import com.duowan.onlyone.R;
-import com.duowan.onlyone.func.video.model.SmallVideoPlayInfo;
+import com.duowan.onlyone.model.entity.kaiyan.ItemListBean;
+import com.salton123.onlyonebase.ImageLoader;
 import com.salton123.util.ViewUtils;
 import com.yy.mobile.memoryrecycle.views.YYImageView;
 
@@ -19,7 +20,7 @@ import com.yy.mobile.memoryrecycle.views.YYImageView;
 public class SmallVideoPlayView extends RelativeLayout {
 
     private static final String TAG = "SmallVideoPlayView";
-    private SmallVideoPlayInfo mPlayInfo;
+    private ItemListBean mPlayInfo;
 
     YYImageView imgVideoSnapshot;
 
@@ -43,12 +44,12 @@ public class SmallVideoPlayView extends RelativeLayout {
         imgVideoSnapshot = ViewUtils.f(this, R.id.imgVideoSnapshot);
     }
 
-    public void updateData(SmallVideoPlayInfo info, boolean b) {
+    public void updateData(ItemListBean info, boolean b) {
         mPlayInfo = info;
-        imgVideoSnapshot.setBackgroundResource(info.snapshotUrl);
+        ImageLoader.Companion.display(imgVideoSnapshot, info.getData().getCover() != null ? info.getData().getCover().getDetail() : "");
     }
 
-    public SmallVideoPlayInfo getPlayInfo() {
+    public ItemListBean getPlayInfo() {
         return mPlayInfo;
     }
 

@@ -1,22 +1,28 @@
 package com.duowan.onlyone.fm.video
 
 import android.os.Bundle
-import android.view.MotionEvent
+import android.view.View
+import com.duowan.onlyone.MainActivity
+import com.duowan.onlyone.MainActivity.MyTouchListener
 import com.duowan.onlyone.R
-import com.duowan.onlyone.func.video.model.SmallVideoPlayInfo
 import com.duowan.onlyone.func.video.view.adapter.VerticalSwitchAdapter
 import com.duowan.onlyone.func.video.view.widget.SmallVideoPlayView
 import com.duowan.onlyone.model.entity.kaiyan.DataBean
 import com.duowan.onlyone.model.entity.kaiyan.ItemListBean
+import com.duowan.onlyone.model.entity.utils.DateUtil
 import com.salton123.base.BaseSupportSwipeBackFragment
+import com.salton123.onlyonebase.ImageLoader
 import com.salton123.onlyonebase.view.verticalswitch.MoveDirection
 import com.salton123.onlyonebase.view.verticalswitch.ScrollItem
 import com.salton123.onlyonebase.view.verticalswitch.SimpleCallback
 import com.salton123.onlyonebase.view.verticalswitch.VerticalSwitchManager
 import com.salton123.util.log.MLog
+import com.xiao.nicevideoplayer.NiceVideoPlayer
 import com.xiao.nicevideoplayer.NiceVideoPlayerController
-import kotlinx.android.synthetic.main.video_home_detail_fragment.*
+import com.xiao.nicevideoplayer.TxVideoPlayerController
+import kotlinx.android.synthetic.main.top_title.*
 import kotlinx.android.synthetic.main.video_home_detail_holder.*
+
 
 /**
  * User: newSalton@outlook.com
@@ -26,7 +32,8 @@ import kotlinx.android.synthetic.main.video_home_detail_holder.*
  */
 class VideoDetailComponent : BaseSupportSwipeBackFragment() {
     override fun InitListener() {
-
+//        tv_title_back.visibility = View.VISIBLE
+//        tv_title_back.setOnClickListener { pop() }
     }
 
     private val TAG = "VideoDetailComponent"
@@ -55,6 +62,8 @@ class VideoDetailComponent : BaseSupportSwipeBackFragment() {
         dataList = arguments.getParcelableArrayList(ARG_ITEM)
         position = arguments.getInt("position")
         dataBean = dataList[position].data
+        /** 触摸事件的注册 */
+        (this.activity as MainActivity).registerMyTouchListener(myTouchListener)
     }
 
 
@@ -65,6 +74,24 @@ class VideoDetailComponent : BaseSupportSwipeBackFragment() {
             position = 0
         }
         mSwitchManager.setData(dataList, dataList[position])
+        mPlayerController = TxVideoPlayerController(activity)
+        videoplayer.setController(mPlayerController)
+        videoplayer.setPlayerType(NiceVideoPlayer.TYPE_NATIVE)
+        if (dataBean != null) {
+            ImageLoader.display(mPlayerController.imageView(), dataBean.cover.detail)
+            mPlayerController.setTitle(dataBean.title)
+            videoplayer.setUp(dataBean.playUrl, null)
+//            title.text = dataBean.title
+//            val stringBuilder = StringBuilder()
+//            stringBuilder.append("#").append(dataBean.category)
+//                    .append(" ")
+//                    .append(" / ")
+//                    .append(" ")
+//                    .append(DateUtil.formatTime2(dataBean.duration.toLong()))
+//            type.text = stringBuilder.toString()
+//            description.text = dataBean.description
+//            title.setText(dataBean.category)
+        }
 //        mSmallVideoPlayer!!.setVideoURI(dataList[position].videoUrl)
 //        mSmallVideoPlayer!!.setOnInfoListener(MediaPlayer.OnInfoListener { mp, what, extra ->
 //            if (mCurrentVideoPlayView != null) {
@@ -108,7 +135,7 @@ class VideoDetailComponent : BaseSupportSwipeBackFragment() {
             }
 
         })
-        mSwitchManager!!.addViewToMoveWithCenterView(ll_detail)
+        mSwitchManager!!.addViewToMoveWithCenterView(videoplayer)
         mSwitchManager!!.setLoadMoreCallback(object : VerticalSwitchManager.LoadMoreCallback {
             override fun onLoadMore() {
                 loadMoredataList()
@@ -120,7 +147,7 @@ class VideoDetailComponent : BaseSupportSwipeBackFragment() {
 
 
     private fun onPageSelected(selectedItem: ScrollItem<ItemListBean>, moveDirection: MoveDirection) {
-        val playInfo = selectedItem.data as SmallVideoPlayInfo
+        val playInfo = selectedItem.data as ItemListBean
         if (playInfo == null) {
             MLog.error(TAG, "onPageSelected, play info is null, scrollItem: %s", selectedItem)
             return
@@ -134,19 +161,19 @@ class VideoDetailComponent : BaseSupportSwipeBackFragment() {
 
     fun playVideo() {
         val smallVideoPlayInfo = getCurrentVideoInfo()
-//        if (smallVideoPlayInfo != null) {
-//            if (mSmallVideoPlayer!!.isPlaying()) {
-//                mSmallVideoPlayer!!.pause()
-//                mSmallVideoPlayer!!.suspend()
-//            }
-//            mSmallVideoPlayer!!.setVideoURI(smallVideoPlayInfo.videoUrl)
-//            mSmallVideoPlayer!!.start()
-//        } else {
-//            MLog.info(TAG, "playVideo smallVideoPlayInfo is null")
-//        }
+
+        if (smallVideoPlayInfo != null) {
+            if (videoplayer.isPlaying()) {
+                videoplayer.pause()
+            }
+            videoplayer.setUp(smallVideoPlayInfo.getData().playUrl, null)
+            videoplayer.start()
+        } else {
+            MLog.info(TAG, "playVideo smallVideoPlayInfo is null")
+        }
     }
 
-    fun getCurrentVideoInfo(): SmallVideoPlayInfo? {
+    fun getCurrentVideoInfo(): ItemListBean? {
         return if (mCurrentVideoPlayView == null) null else mCurrentVideoPlayView!!.playInfo
     }
 
@@ -157,8 +184,8 @@ class VideoDetailComponent : BaseSupportSwipeBackFragment() {
 
 
     private fun scrollPlayerView(dy: Float) {
-        val tY = -dy + ll_detail.y
-        ll_detail.translationY = tY
+        val tY = -dy + videoplayer.y
+        videoplayer.translationY = tY
     }
 
 
@@ -172,6 +199,16 @@ class VideoDetailComponent : BaseSupportSwipeBackFragment() {
 //        return super.dispatchTouchEvent(ev)
 //    }
 
+    /** 接收MainActivity的Touch回调的对象，重写其中的onTouchEvent函数  */
+    var myTouchListener: MyTouchListener = MyTouchListener { event ->
+        //处理手势事件（根据个人需要去返回和逻辑的处理）
+        mSwitchManager.onDispatchTouchEvent(event)
+        true
+    }
 
-
+    override fun onDestroyView() {
+        super.onDestroyView()
+        /** 触摸事件的注销  */
+        (this.activity as MainActivity).unRegisterMyTouchListener(myTouchListener)
+    }
 }
